@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"suihua","endCityName":"绥化","endCitySimplePinYin":"sh"},{"endCityFullPinYin":"haerbin","endCityName":"哈尔滨","endCitySimplePinYin":"heb"},{"endCityFullPinYin":"zhaodongshi","endCityName":"肇东市","endCitySimplePinYin":"zds"}]

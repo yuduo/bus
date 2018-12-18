@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<!--Ajax跨域问题浏览器兼容性-->
+<link rel="shortcut icon" href="http://cdn.12307.net/wxclient/v3.0/image/favicon.ico" type="http://cdn.12307.net/wxclient/v3.0/image/x-icon" />  
+<title>12307-全国汽车票预订平台_长途汽车线路时刻表_汽车票查询_</title>
+<meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站" />
+<meta name="description" content="12307是提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！" />
+
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/min-chepiaopay.css" type="text/css">
+ 
+</head>
+<body onselectstart="return false">
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+<input type="hidden" id="errorDesc" value="">
+	<div id="main">
+		<div id="headerBox" class="headerBox">
+			<!--head--->
+			<article class="header">
+				<header>
+					<a class="header_left" href="javascript:void(0);"><i class="returnico" id="pageBack"></i></a>
+					<h1>立即支付</h1>
+				</header>
+			</article>
+		</div>
+		<!--/head--->
+		<!--mainBox--->
+		<div id="mainBox">
+			<!--主页面层--->
+			<div class="payprompt">
+				<input type="hidden" id="remainingTime" value="600">
+				<input type="hidden" id="makeDate" value="<?php echo $orderinfo['date'] ;?> <?php echo $orderinfo['time'];?>">
+				<input type="hidden" id="startDate" value="<?php echo $orderinfo['date'] ;?>">
+				<input type="hidden" id="orderId" value="<?php echo $orderinfo['id'] ;?>">
+				<input type="hidden" id="orderNo" value="<?php echo $orderinfo['orderNum'] ;?>">
+				<input type="hidden" id="status" value="1">
+				<input type="hidden" id="appId" value="wx37faaaf77fbbdc36">
+				<p id="ms">
+				请在<b class="cred" id="mt">10</b>分<b class="cred" id="st">00</b>秒内完成支付，否则系统将取消本次交易
+				</p>
+			</div>
+			<div class="info_city_box">
+				<div class="OTitle">
+					订单号：<span class="cblue"><?php echo $orderinfo['orderNum'] ;?></span><span class="OTime"><?php echo $orderinfo['date'];?>
+						<span id="OTime"><?php echo $weekday[date('w',strtotime($orderinfo['date']))];?></span></span>
+				</div>
+				<div class="info_city">
+					<div class="grid-start">
+						<p><?php echo $orderinfo['start_place']; ?></p>
+					</div>
+					<div class="grid-jiantou">
+						<p><?php echo $orderinfo['time'];?></p>
+						<div>出发</div>
+					</div>
+					<div class="grid-end">
+						<p><?php echo $orderinfo['stop_place']; ?></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="bkBox3"><div class="BXBoxT3"><span class="f_l">实付金额</span> <span class="f_r cprice"><dfn>¥</dfn><b><?php echo $orderinfo['price']; ?></b></span></div></div>
+			
+			<div class="payBox">
+				<ul class="pay_radio">
+					<li id="alipay_li" style="display:none;">
+						<input id="pay_zfb" type="radio" name="pers_name" value="支付宝"> 
+						<label for="pay_zfb"> 
+							<img src="http://cdn.12307.net/wxclient/v3.0/image/pay_zfb.png"><span><b>支付宝支付</b><br />推荐支付宝钱包用户使用</span>
+						</label>
+					</li>
+					<li id="weixin_pay_li" style="display:none;">
+						<input id="pay_weixin" type="radio" name="pers_name" value="微信"> 
+						<label for="pay_weixin">
+							<img src="http://cdn.12307.net/wxclient/v3.0/image/pay_weixin.png"><span><b>微信支付</b><br/>推荐已安装微信客户端的用户使用</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="h50"></div>
+		<div class="order_footer">
+			<div class="qcp_plr10">
+				<div id="sureDiv" class="order_f3  btnRed">
+					<a id="paySubmit" href="javascript:void(0);">立即支付</a>	
+				</div>
+			</div>
+		</div>
+		<!--/主页面层--->
+		<!--/底部--->
+		<div class="widow-view-box">
+			<div class="widow-pop-box">
+				<div class="widow-hd">温馨提示</div>
+				<div class="widow-bd">
+					<div class="widow-tips">您即将离开支付页面，是否确定不支付？</div>
+					<ul class="widow-roller-btns">
+						<a><li class="widow-flexbd widow-btns-cancel">取消</li></a>
+						<a href="javascript:_obj.redirect('index.php?p=home&c=index&a=myOrder');"><li class="widow-flexbd widow-btns-confirm">确认</li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/require.min.js" data-main="http://cdn.12307.net/wxclient/v3.0/js/chepiao_pay"></script>
+</body>
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7cffe8c85da9777cb852d9c371ff0b10";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+</html>
+<!-- baidu count -->

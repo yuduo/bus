@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"wuxi","endCityName":"无锡","endCitySimplePinYin":"wx"},{"endCityFullPinYin":"jieyang","endCityName":"揭阳","endCitySimplePinYin":"jy"},{"endCityFullPinYin":"shantou","endCityName":"汕头","endCitySimplePinYin":"st"},{"endCityFullPinYin":"chaozhou","endCityName":"潮州","endCitySimplePinYin":"cz"}]

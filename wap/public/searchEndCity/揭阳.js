@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"sanya","endCityName":"三亚","endCitySimplePinYin":"sy"},{"endCityFullPinYin":"haikou","endCityName":"海口","endCitySimplePinYin":"hk"},{"endCityFullPinYin":"guangzhou","endCityName":"广州","endCitySimplePinYin":"gz"}]

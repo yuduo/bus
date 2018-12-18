@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"qingdao","endCityName":"青岛","endCitySimplePinYin":"qd"},{"endCityFullPinYin":"feixixian","endCityName":"肥西县","endCitySimplePinYin":"fxx"},{"endCityFullPinYin":"shanghai","endCityName":"上海","endCitySimplePinYin":"sh"},{"endCityFullPinYin":"hefei","endCityName":"合肥","endCitySimplePinYin":"hf"}]

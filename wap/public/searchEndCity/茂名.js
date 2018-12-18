@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"huizhou","endCityName":"惠州","endCitySimplePinYin":"hz"},{"endCityFullPinYin":"dongguan","endCityName":"东莞","endCitySimplePinYin":"dg"},{"endCityFullPinYin":"zhuhai","endCityName":"珠海","endCitySimplePinYin":"zh"},{"endCityFullPinYin":"shenzhen","endCityName":"深圳","endCitySimplePinYin":"sz"}]

@@ -1,0 +1,463 @@
+.cover {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=75);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.chance-submit:link,
+.chance-submit:visited,
+.chance-submit:hover,
+.chance-submit:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+.chance-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 618px;
+  height: 496px;
+  margin: -240px 0 0 -340px;
+  vertical-align: middle;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/bg-pic.png");
+  z-index: 210;
+}
+
+.arrow {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: none;
+  border-bottom-color: #ffd143;
+  /* margin-left: 50px; */
+  /* margin-top: -1px; */
+  top: -5px;
+  right: 12px;
+}
+
+.chance-wrap .chance-mask {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  font: normal 12px/1.5 "microsoft yahei", "Arial, Helvetica, sans-serif, SimSun";
+}
+
+.chance-wrap .chance-header > img {
+  display: block;
+  margin: 30px auto 0;
+}
+
+.chance-wrap .chance-header {
+  width: 90%;
+  /*    background: #f8ae30;*/
+  /*    background: -moz-linear-gradient(left, #f6d300, #f8ae30);
+      background: -webkit-gradient(linear, 0 0, right 0, from(#f6d300), to(#f8ae30));*/
+  overflow: hidden;
+  font-size: 20px;
+  color: #ff7800;
+  text-align: left;
+  font-weight: bold;
+  padding: 36px 22% 2px;
+  line-height: 46px;
+}
+
+.chance-wrap .chance-header p {
+  font-size: 43px;
+  font-weight: bolder;
+}
+
+.chance-wrap .chance-form {
+  width: 371px;
+  margin: 5px auto;
+  overflow: hidden;
+}
+
+.chance-wrap .chance-box {
+  width: 103%;
+  height: 38px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+
+.chance-wrap .chance-box label {
+  float: left;
+  white-space: normal;
+}
+
+.chance-wrap .chance-box > input {
+  width: 291px;
+  height: 34px;
+  background-color: #ffecb9;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: left;
+  box-sizing: border-box;
+  line-height: 18px;
+  color: #af8c6d;
+  padding-left: 5px;
+  border: 2px solid #FFEBB6;
+}
+
+.chance-wrap input::-webkit-input-placeholder {
+  color: #A27954;
+}
+
+.chance-wrap input:-moz-placeholder {
+  color: #A27954;
+}
+
+.chance-wrap input::-moz-placeholder {
+  color: #A27954;
+}
+
+.chance-wrap input:-ms-input-placeholder {
+  color: #A27954;
+}
+
+.chance-wrap .chance-box .select-mul {
+  width: 291px;
+  float: left;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.chance-wrap .chance-box > input:focus {
+  outline: none;
+  border: 1px solid #ffa000;
+}
+
+.market-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+
+.chance-box .select-item {
+  float: left;
+  width: 27px;
+  margin-left: -30px;
+  margin-top: 3px;
+  background-color: #ffd143;
+  text-align: center;
+  line-height: 25px;
+  height: 27px;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'microsoft yahei';
+}
+
+.chance-box span {
+  display: inline-block;
+  font-size: 15px;
+  color: #3e250f;
+  line-height: 38px;
+}
+
+.chance-box .txt-mobile-flash {
+  color: #ff7800;
+  display: none;
+}
+
+.chance-box .txt-flash {
+  color: #ff7800;
+  display: none;
+}
+
+i.chance-icon1 {
+  background-position: 0 0;
+}
+
+i.chance-icon2 {
+  background-position: 0 -20px;
+}
+
+i.chance-icon3 {
+  background-position: 0 -40px;
+}
+
+.chance-submit {
+  display: block;
+  width: 196px;
+  height: 49px;
+  line-height: 38px;
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/get-btn.png");
+  background-size: 100% 100%;
+  margin: 6px 0 7px 92px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.btn-flash {
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/get-hover-btn.png");
+}
+
+.chance-submit:hover {
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/get-hover-btn.png");
+}
+
+.change-tips {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 10px;
+  font-size: 12px;
+  color: #A27954;
+  line-height: 18px;
+}
+
+.change-tips .tips {
+  color: #f8ad2f;
+  font-size: 14px;
+  line-height: 30px;
+  display: block;
+}
+
+.change-tips > .market-delete-cookie {
+  display: block;
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+  color: #a16028;
+  font-size: 12px;
+}
+
+.chance-wrap .tips-detail {
+  margin-top: 32px;
+  margin-left: 36px;
+  padding: 0;
+  list-style: none;
+}
+
+.chance-wrap .unvisible-checkbox {
+  display: none;
+}
+
+.chance-close {
+  right: 17px;
+  top: 39px;
+  width: 30px;
+  height: 30px;
+  /*    border-color: #ff6702 #ff6702 transparent transparent;
+      border-style: solid solid solid solid;
+      border-width: 33px;*/
+  z-index: 99;
+  color: #ff7800;
+  position: absolute;
+}
+
+.chance-wrap .tips-option {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.chance-close .market-delete {
+  position: absolute;
+  font-size: 28px;
+  color: #ff7800;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.un-submit {
+  background-color: #898989;
+}
+
+.chance-wrap .select-section {
+  position: absolute;
+  top: 203px;
+  left: 69px;
+  right: 0;
+  margin: auto;
+  width: 290px;
+  /*    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+      -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);*/
+  background-color: #ffd143;
+  color: #944601;
+  box-sizing: border-box;
+  padding: 7px 0px 13px 27px;
+  display: none;
+  z-index: 99;
+}
+
+.chance-wrap .select-title {
+  font-size: 14px;
+  color: #ce7a30;
+  margin-left: 25px;
+}
+
+.chance-wrap .market-select {
+  overflow: hidden;
+  margin: 10px 0px 0px 0px;
+}
+
+.chance-wrap .market-circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: #fffeda;
+}
+
+.chance-wrap .market-ui-checkbox {
+  cursor: pointer;
+  font-size: 14px;
+  float: left;
+  margin-right: 2px;
+  margin-bottom: 7px;
+  width: 125px;
+}
+
+.chance-wrap .checked {
+  background-color: #f8ad2f;
+  border: 1px solid #f8ae30;
+}
+
+.chance-wrap .market-ui-checkbox:hover .market-circle {
+  border: 1px solid #f8ae30;
+}
+
+.chance-wrap .market-margin-0 {
+  margin-right: 0;
+}
+
+.market-select-ok {
+  width: 108px;
+  height: 30px;
+  background-color: #c77719;
+  color: #ffeaaa;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  display: block;
+  border-radius: 3px;
+  margin-left: 65px;
+  margin-top: -4px;
+  box-shadow: 0 2px 0 0 #683d17;
+}
+
+.market-select-ok:hover {
+  background-color: #a55f0c;
+  color: #ffeaaa;
+  text-decoration: none;
+}
+
+.market-select-delete {
+  display: inline-block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  right: 0;
+  top: 0;
+  color: #898989;
+  font-size: 28px;
+  text-align: center;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.market-ui-dialog {
+  position: fixed;
+}
+
+.market-chance-success {
+  width: 618px;
+  height: 496px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/success-bg-pic.png");
+  border-radius: 3px;
+  z-index: 120;
+}
+
+.mar-icon-success {
+  display: block;
+  float: left;
+  margin-top: 114px;
+  margin-left: 232px;
+  width: 40px;
+  height: 40px;
+  background: url("http://cms.zbjimg.com/static/marketpopups/success-icon.png") no-repeat;
+}
+
+.chance-success-symbol {
+  color: #ef8609;
+  font-size: 40px;
+  font-weight: bolder;
+  display: inline-block;
+  text-align: center;
+  margin-left: 11px;
+  margin-top: 104px;
+}
+
+.market-success-know {
+  position: absolute;
+  bottom: 90px;
+  left: 205px;
+  height: 49px;
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/he-knows.png");
+  background-size: 100% 100%;
+  width: 196px;
+  cursor: pointer;
+}
+
+.btn-flash-success {
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/he-knows-hover.png");
+}
+
+.market-success-know:hover {
+  background-image: url("http://cms.zbjimg.com/static/marketpopups/he-knows-hover.png");
+}
+
+.chance-success-detail {
+  text-align: center;
+  font-size: 19px;
+  color: #ff7800;
+  font-weight: bold;
+  margin-top: 28px;
+}
+
+#marketing-box.kill {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: none;
+  visibility: hidden;
+}
+
+#J-market-chance {
+  cursor: default;
+}

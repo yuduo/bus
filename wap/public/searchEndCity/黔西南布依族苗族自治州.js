@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"shanghai","endCityName":"上海","endCitySimplePinYin":"sh"},{"endCityFullPinYin":"wenling","endCityName":"温岭","endCitySimplePinYin":"wl"}]

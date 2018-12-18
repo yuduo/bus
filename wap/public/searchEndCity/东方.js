@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"nanning","endCityName":"南宁","endCitySimplePinYin":"nn"}]

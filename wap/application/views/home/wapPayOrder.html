@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<link rel="shortcut icon" href="http://cdn.12307.net/wxclient/v3.0/image/favicon.ico" type="../wxclient/v3.0/image/x-icon" />
+
+	<title>12307全国汽车票</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/base.css" type="text/css">
+
+	<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/pay.css" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="http://cdn.12307.net/wxclient/v3.0/css/sys.css">
+
+<!-- 	<link rel="stylesheet" type="text/css" href="../wxclient/v3.0/css/min-wxpay.css"> -->
+
+</head>
+
+<body>
+
+	<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+
+	<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+
+	<input type="hidden" id="pack" value="<?php echo $pack ;?>">
+
+	<input type="hidden" id="prepayId" value="<?php echo $prepayId ;?>">
+
+	<input type="hidden" id="timeStamp" value="<?php echo $timeStamp ;?>">
+
+	<input type="hidden" id="nonceStr" value="<?php echo $nonceStr ;?>">
+
+	<input type="hidden" id="signType" value="MD5">
+
+	<input type="hidden" id="appId" value="<?php echo $appId ;?>">
+
+	<input type="hidden" id="sign" value="<?php echo $sign ;?>">
+
+	<input type="hidden" id="orderId" value="<?php echo $orderId ;?>">
+
+	<input type="hidden" id="orderNo" value="<?php echo $orderNo ;?>">
+
+	<a name="top"></a>
+
+<div id="main">
+
+<div id="headerBox" class="headerBox">
+
+<!--head--->   
+
+<article class="header">
+
+<header>
+
+    <h1>支付中转</h1>
+
+</header>
+
+</article>
+
+</div>
+
+	<div class="pay_zz">
+
+		<P>正在转向中，请稍后…</P>
+
+		如果系统长时间无响应，<br> 请<a href="javascript:wxPay.wxListener();">单击此处</a>跳转
+
+	</div>
+
+	
+
+	<!--/底部--->
+
+	<div class="widow-view-box" style="display:none;" id="tipInfo">
+
+		<div class="widow-pop-box">
+
+			<div class="widow-hd">温馨提示</div>
+
+			<div class="widow-bd">
+
+				<div class="widow-tips">请及时完成支付，防止订单超时失效!</div>
+
+				<ul class="widow-roller-btns">
+
+					<a href="<?php echo $orderList ;?>"><li class="widow-flexbd widow-btns-confirm">支付成功</li></a>
+
+					<a href="<?php echo $orderList ;?>"><li class="widow-flexbd widow-btns-cancel">支付失败</li></a>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- 网络异常提示语 --->
+
+	<div class="widow-view-box" style="display:none;" id="errorInfo">
+
+		<div class="widow-pop-box">
+
+			<div class="widow-hd">温馨提示</div>
+
+			<div class="widow-bd">
+
+				<div class="widow-tips">网络异常，请到订单列表重新支付!</div>
+
+				<ul class="widow-roller-btns">
+
+					<a href="<?php echo $orderList ;?>"><li class="widow-flexbd widow-btns-confirm">订单列表</li></a>
+
+					<a href="http://m.12307.so"><li class="widow-flexbd widow-btns-cancel">返回首页</li></a>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>	
+
+</body>
+
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/wxp/wxpay.js"></script>
+
+</html>

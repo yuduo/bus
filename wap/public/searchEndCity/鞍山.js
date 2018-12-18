@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"puyang","endCityName":"濮阳","endCitySimplePinYin":"py"},{"endCityFullPinYin":"xingcheng","endCityName":"兴城","endCitySimplePinYin":"xc"},{"endCityFullPinYin":"huludao","endCityName":"葫芦岛","endCitySimplePinYin":"hld"},{"endCityFullPinYin":"nanjing","endCityName":"南京","endCitySimplePinYin":"nj"}]

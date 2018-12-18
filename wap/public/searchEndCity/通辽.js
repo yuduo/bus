@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"beijing","endCityName":"北京","endCitySimplePinYin":"bj"}]

@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"baoding","endCityName":"保定","endCitySimplePinYin":"bd"},{"endCityFullPinYin":"anyang","endCityName":"安阳","endCitySimplePinYin":"ay"},{"endCityFullPinYin":"beijing","endCityName":"北京","endCitySimplePinYin":"bj"}]

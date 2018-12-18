@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>特价汽车票_12307全国汽车票</title>
+<link href="http://cdn.12307.net/2015/image/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站,特价汽车票" />
+<meta name="description" content="12307线路时刻表频道页提供汽车票价格查询问题,提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！"/>
+<link rel="stylesheet" href="http://cdn.12307.net/website/css/base.css" />
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/ictiy.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/icity_list.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/zepto.alert.css" type="text/css">
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/require.min.js" data-main="http://cdn.12307.net/wxclient/v3.0/js/citybus/common/citybusDetail-main"></script>
+</head>
+<body>
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+<div class="bodyhead">
+  <div class="main-wrap">
+    <h1 class="logo"><a title="12307全国汽车票网" href="http://www.12307.net">12307全国汽车票网</a></h1>
+  </div>
+  <!--导航菜单-->
+  <div class="bodymenu">
+    <div class="mainnav">
+      <ul class="navmenu">
+        <li class="nav_0"><a class="" href="index.php" title="首页">首页</a></li>
+        <li class="nav_1"><a href="index.php" title="汽车票"  class="cur">汽车票</a></li>
+        <li class="nav_2"><a href="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=9145095&userId=21032841'"  title="在线咨询">在线咨询</a></li>
+        <li class="nav_3"><a href="aboutus.html" title="关于12307">关于12307</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="h15"></div>
+
+<div class="main-wrap"> 
+  
+  <!--中间部份-->
+  <div class="h15"></div>
+  <div class="main_center">
+    <div id="headerBox" class="headerBox"> 
+      <!--head--->
+      <article class="header">
+        <header> <a class="header_left" href="javascript:history.go(-1);"></a>
+          <h1>城际专线线路详情</h1>
+        </header>
+      </article>
+    </div>
+    <!--/head---> 
+    <!--mainBox--->
+    <div id="mainBox">
+      <div class="prompTipY">
+        <p>
+          <?php if($times['is_sale'] ==1){ ;?>
+          本线路为车站直达线路，站外顺风车，不支持站内取票，乘车请联系短信内司机电话（12307官方认证并提供担保）
+          <?php }else{;?>
+          本线路为车站直达线路,不支持网上退定改签,如要退票请到车站取好纸制车票,在车站退票窗口退票.
+          <?php };?>
+        </p>
+      </div>
+      <div class="main_con"> 
+        <!--/立即预订--->
+        <div class="main_bod">
+          <div class="ol_tit"> <span class="oleft"></span><span class="oright"><span class="cdate"><?php echo $date;?></span><span class="cstar"><?php echo $weekday[date('w', strtotime($date))];?></span></span> </div>
+          <div class="ol_time"> <b class="c333"><?php echo $times['time'];?></b><span>发车</span> </div>
+          <div class="ol_begin" data-name="闸北区沪太路365号华龙停车场" longitude="" latitude=""> <span class="oleft"><b class="traicon begin"></b><span><?php echo $line['start'];?>&nbsp;</span></span> <span class="oright"><i class="cprice"><?php echo $times['price'];?></i></span> </div>
+          <div class="ol_end" data-name="青岛" longitude="" latitude=""> <span class="oleft"><b class="traicon end"></b><span><?php echo $line['stop'];?>&nbsp;</span></span> <span class="oright">有票</span> </div>
+        </div>
+        <!--立即预订/---> 
+      </div>
+      <!--/巴士信息---> 
+      <!--/途经路线--->
+      <div class="line_box">
+        <div class="lb_tit"> <span>途经路线</span> </div>
+        <div id="wrapper" class="bus_scroll bus_radio">
+          <ul class="bus_line">
+            <li class="bus_stop cur startPlace" starttime="17:30" data-name="<?php echo $times['start_place'];?>"> <span class="bus_stop_line" data-name="<?php echo $times['start_place'];?>" longitude="" latitude=""> <span class="bus_stop_sign sign1"></span> </span> <span class="bus_stop_time"><?php echo $times['time'] ;?></span> <span class="bus_stop_text"><?php echo $times['start_place'];?></span> </li>
+            <li class="bus_stop cur endPlace" starttime="" data-name="<?php echo $times['stop_place'];?>"> <span class="bus_stop_line" data-name="<?php echo $times['stop_place'];?>" longitude="" latitude=""> <span class="bus_stop_sign sign4"></span> </span> <span class="bus_stop_time"></span> <span class="bus_stop_text"><?php echo $times['stop_place'];?></span> </li>
+          </ul>
+        </div>
+      </div>
+      <!--/途经路线--->
+      <div class="BIBox">
+        <div class="bus_info">巴士信息</div>
+        <div class="perlist_box">
+          <ul>
+            <li>
+              <label>司<i>机：</i></label>
+              <div class="input_box_div">
+                <div class="li_input"><?php echo $driver_info['name'] ;?>&nbsp;</div>
+              </div>
+            </li>
+            <li>
+              <label>联系电话：</label>
+              <div class="input_box_div">
+                <div class="li_input"> <a href="tel:15601903152"><?php echo $driver_info['phone'] ;?>&nbsp;</a> </div>
+              </div>
+            </li>
+            <li>
+              <label>车牌信息：</label>
+              <div class="input_box_div">
+                <div class="li_input">&nbsp;<?php echo $driver_info['plate_number'] ;?></div>
+              </div>
+            </li>
+            <li>
+              <label>客运企业：</label>
+              <div class="input_box_div">
+                <div class="li_input"><?php echo  $driver_info['company'] ;?>&nbsp;</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!--巴士信息/---> 
+      <!--购票详情/---> 
+      <!--购票详情/---> 
+    </div>
+    <!--检票、退票须知/--->
+    <div class="bkBox bggray">
+      <div class="BXBoxT" id="LeafletBoxa"><span>检票、退票须知</span></div>
+    </div>
+    <!--底部--->
+    <div class="h50"></div>
+    <div class="order_footer" id="foot_float">
+      <div class="qcp_plr10">
+        <div class="order_f3 btnRed"> <a id="searchSubmit" href="javascript:void(0);">立即预订</a> </div>
+        <!---btnGray-->
+ 			</div>
+		</div>
+	</div>
+	<!--地图--->
+        <nav id="MapBox" class="infoPage">
+          <nav class="contact_info">
+            <article class="header">
+              <header> <i class="returnico infoPage_close" title="返回"></i>
+                <h1>地图</h1>
+              </header>
+            </article>
+            <section class="LeafletCon">
+              <div class="cmap_box" style="background: #f0f0f0">
+                <div id="baiduMap" style="width: 100%;height:100%;"></div>
+              </div>
+            </section>
+          </nav>
+        </nav>
+        
+        <!--预订、取票、退票须知--->
+        <nav id="LeafletBox" class="infoPage">
+          <nav class="contact_info">
+            <article class="header">
+              <header> <i class="returnico infoPage_close" title="返回"></i>
+                <h1>检票、退票须知</h1>
+              </header>
+            </article>
+            <section class="LeafletCon">
+              <h2>检票</h2>
+              <p>旅客购票成功后，凭二维码或取票联系人电话号码检票可直接上车。</p>
+              <h2>退票须知</h2>
+              <p><span class="c666">1. </span>离开车时间<span class="cred">2小时前</span>办理退票，按票面额<span class="cred">20%</span>计收退票费;</p>
+              <p><span class="c666">2. </span>离开车时间<span class="cred">2小时以内</span>办理退票，按票面额<span class="cred">50%</span>计收退票费;</p>
+              <p><span class="c666">3. </span>发车后办理退票，扣票面额<span class="cred">100%</span>收取退票费；
+              <p><span class="c666">3. </span>发车后不办理退票； </p>
+              <p><span class="c666">4. </span>退票费是由于旅客自身原因退票才收取，如果是由于大雾等客观原因造成的班车延误，旅客退票，则不收取退票费； </p>
+              <p><span class="c666">5. </span>所有在线退票，原预订的<span class="cred">保险款不予退还</span>。 </p>
+              <p><span class="c666">6. </span>应退票款按银行规定时限退还至购票时所使用的网上支付工具账户，请注意查询，如有疑问请致电12307人工客服查询。 </p>
+            </section>
+          </nav>
+        </nav>
+        <input type="hidden" id="startPlace" value="<?php echo $times['start_place'];?>">
+        <input type="hidden" id="endPlace" value="<?php echo $times['stop_place'];?>">
+        <input type="hidden" id="startTime" value="<?php echo $times['time'];?>">
+        <input type="hidden" id="scheduleCode" value="<?php echo $times['scheduleCode'];?>">
+        <input type="hidden" id="leaveSeat" value="<?php echo $times['ticket'];?>">
+        <input type='hidden' id='date' value="<?php echo $date;?>">
+
+
+</div>
+<input type="hidden" id="timesType" value="0"/>
+<input type="hidden" id="stationName" value="0"/>
+
+<!--公用Foot和友情链接-->
+<div class="h20"></div>
+<div class="footer">
+  <div class="footer-hd">
+    <p> <a href="http://www.12306.cn" target="_blank" title="火车票网上订票">火车票网上订票</a> <b>|</b> <a href="http://trip.taobao.com" target="_blank" title="淘宝旅行">淘宝旅行</a> <b>|</b> <a href="http://www.qunar.com" target="_blank" title="去哪儿网">去哪儿网</a> <b>|</b> <a href="http://www.tieyou.com" target="_blank" title="铁友网">铁友网</a> </p>
+  </div>
+  <div class="footer-bd">
+    <p> <a  title="关于12307" href="aboutus.html">关于12307</a> <a  title="联系我们"  href="contactus.html">联系我们</a> <a  title="服务协议"   href="agree.html">服务协议</a> <a  title="诚征英才" href="jobs.html">诚征英才</a> <a  title="常见问题" href="question.html">常见问题</a> </p>
+    <p> <em>&copy; 2014 12307 版权所有</em> <b>|</b> <span><a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备16020560号</a></span> </p>
+  </div>
+</div>
+</html>

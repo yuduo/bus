@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"handan","endCityName":"邯郸","endCitySimplePinYin":"hd"}]

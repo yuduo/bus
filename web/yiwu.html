@@ -1,0 +1,1257 @@
+<!doctype html>
+<html>
+<head>
+<title>12307特价汽车票网</title>
+<script type="text/javascript">
+       /**
+        * 判断用户设备
+        */
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        //判断是否手机访问，如果是，则转向手机页面
+        if(bIsIphoneOs || bIsAndroid){
+            window.location.href="http://m.12307.net";
+        }
+    </script>
+<meta charset="utf-8" />
+<meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站" />
+<meta name="description" content="12307是提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！"/>
+<link href="http://cdn.12307.net/2015/image/favicon.ico" type="image/x-icon"  rel="icon"/>
+<link href="http://cdn.12307.net/2015/image/favicon.ico" type="image/x-icon"  rel="shortcut icon"/>
+<link type="text/css" rel="stylesheet" href="http://cdn.12307.net/2015/css/index.css" />
+<script src="http://cdn.12307.net/2015/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+//出发城市加亮点
+	$(function($){
+	 	var coundown = {
+	 		dayMax:$("#dayMax").val(),
+			flag:$("#flag").val(),
+			remainTime:$("#remainTime").val(),
+			active:function() {
+				var flagVar = this.flag;
+				var dayMax = this.dayMax;
+				if(dayMax !="" && dayMax < 0){
+				if(flagVar != "") {
+					var cddDom = $(".Slider_1 span");
+					if(flagVar == "1") {
+						this.countdownfuc(this.remainTime,cddDom.eq(0));
+					} else if(flagVar == "2") {
+						this.countdownfuc(this.remainTime,cddDom.eq(2));
+					} else if(flagVar == "3") {
+						this.countdownfuc(this.remainTime,cddDom.eq(4));
+					} else if(flagVar == "4") {
+						
+					}
+				}else {
+					if(window.console) {
+						console.log("活动页面异常，请联系管理员。。。");
+					}
+				}
+				}
+			},
+			countdownfuc:function(remainTime,input) {
+				var that = this;
+				var cdDom = input.find("span p");
+				if(remainTime > 0) {
+					var h=Math.floor(remainTime/60/60%24);//时
+					if(h<10){
+						h = "0"+h;
+					}
+			        var m=Math.floor(remainTime/60%60);//分
+			        if(m<10) {
+			        	m = "0"+m;
+			        }
+			        var s=Math.floor(remainTime%60);//秒
+			        if(s<10) {
+			        	s = "0"+s;
+			        }
+			        cdDom.html("<b>"+h+"</b><i> : </i><b>"+m+"</b><i> : </i><b>"+s+"</b>");
+			        cdDom.addClass("Ttime");
+			        --remainTime;
+			        setTimeout(function(){that.countdownfuc(remainTime,input)},1000);//1秒执行一次
+				} else { //到时间，活动已经结束
+					cdDom.val("已结束");
+					cdDom.removeClass("Ttime");
+					return;
+				}
+			
+			},
+			freshData:function() {
+				window.location.reload();
+			}
+		};
+		//coundown.active();
+		setTimeout(function() {coundown.freshData},1000*(coundown.remainTime+1));
+		
+		
+		
+		$(".citynabList").bind("click", function(){
+				$(".citynabList").each(function(){
+					$(this).removeClass("hover");
+				});
+				$(this).addClass("hover");
+		});	
+		});
+    
+	//出发城市滚动
+	$(window).scroll(function(){
+
+		if ($("#table_fix").length > 0) {
+			if ((120 + 70 -$(window).scrollTop()) > 0) {
+			$("#table_fix").removeClass("table_fix");
+			}else {
+				$("#table_fix").addClass("table_fix");
+		/* 		$('body').scrollspy('refresh'); */
+			}	
+		}
+		})		
+	//出发城市加id
+	$(function($){ 
+	var nav=$(".citynabList a");
+	for(var i=0;i<nav.length;i++){
+		nav[i].id= "nav"+i;
+	}
+	var objs=$(".main_wrap");
+	for(var i=0;i<objs.length;i++){
+		objs[i].id= i;
+	}
+	
+	});
+	 
+	 //返回顶部
+$(document).scroll(function(){ 
+	var  scrollTop =  $(document).scrollTop(),bodyHeight = $(window).height(); 
+	if(scrollTop > bodyHeight){ 
+		$('.fixed-bar .gotop').css('display','block');
+	}else{
+		$('.fixed-bar .gotop').css('display','none');
+	} 
+})
+</script>
+<script>
+
+
+
+function goUrl($start,$end)
+{
+	var dd = new Date();   
+	dd.setDate(dd.getDate()+1);
+	var y=dd.getMonth()+1;
+	var d=dd.getDate();
+	var today= dd.getFullYear()+'-'+((y<10?'0':'')+y)+'-'+((d<10?'0':'')+d); 
+	
+	window.location.href =  "index.php?p=home&c=index&a=searchLine&startCityName=" + encodeURIComponent(encodeURIComponent($start)) + "&endCityName=" + encodeURIComponent(encodeURIComponent($end)) + "&date=" + today;
+}
+</script>
+</head>
+<body>
+
+<!--顶部公用-->
+<!--中间部份-->
+<span class="fixed-bar"><a href="javascript:scrollTo(0,0)" class="gotop" title="回到顶部" style="display: block;">
+<i class="icon"></i></a>
+</span>
+
+<!--TopSlider-->
+<div class="TopSlider">
+	<div class="SliderBd">
+        <div class="Slider_bg">
+       
+        <div class="banner banner4"></div>
+        <div class="banner banner5"></div>
+        </div>
+		<div class="Slider">
+        
+        <!--fixed-->
+        <div class="citynav" id="table_fix">
+        <div class="citynabBd">
+        <div class="citynabList hover"><a href="#0"><span>义乌出发</span></a></div>
+        <div class="citynabList"><a href="#1"><span>深圳出发</span></a></div>
+        <div class="citynabList"><a href="#2"><span>苏州出发</span></a></div>
+        <div class="citynabList"><a href="#3"><span>广州出发</span></a></div>
+        <div class="citynabList"><a href="#4"><span>杭州出发</span></a></div>
+        <div class="citynabList"><a href="#5"><span>厦门出发</span></a></div>
+        <div class="citynabList"><a href="#6"><span>南京出发</span></a></div>
+        <div class="citynabList"><a href="#7"><span>昆明出发</span></a></div>
+        <div class="citynabList"><a href="#8"><span>盐城出发</span></a></div>
+        <div class="citynabList"><a href="#9"><span>宁波专场</span></a></div>
+        
+        </div>
+        </div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<!--义乌出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">义乌出发<span>假期到了，心情开心一点，生活快乐一点 旅游自在一点</span></div>
+<p class="tit_txt">义乌，拥有深厚的近代城市文化底蕴和众多历史古迹
+<br/>与江苏、浙江、安徽共同构成的长江三角洲城市群已成为国际6大世界级城市群之一
+ </p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','深圳')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="深圳">深圳</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>480</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>350</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','珠海')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="珠海">珠海</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>480</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>430</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','广州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="广州">广州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>480</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>350</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','中山')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="中山">中山</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>460</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>400</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','东莞')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="东莞">东莞</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>408</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>380</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','淮安')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="淮安">淮安</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>147</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>138</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('义乌','盐城')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="义乌">义乌</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="盐城">盐城</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>123</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>100</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+  
+</div></div>
+
+
+<!--深圳出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">深圳出发<span>假期假期，出去转转，寻寻欢乐，觅觅幸福</span></div>
+<p class="tit_txt">深圳，已发展为有一定影响力的国际化城市<br/>
+举世瞩目的“深圳速度”，同时也是“设计之都”、“钢琴之城”、“创客之城”</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('深圳','昆山')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="昆山">昆山</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>50</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('深圳','苏州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="苏州">苏州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>70</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('深圳','成都')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="成都">成都</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>100</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>59.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('深圳','常州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="常州">常州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>100</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>59.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="茂名">茂名</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>100</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>59.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="阳江">阳江</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>140</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>99.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="深圳">深圳</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="梅州">梅州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>130</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>99.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+<!--苏州出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">苏州出发<span>假期小长假，快乐到你家，观美景来享美食</span></div>
+<p class="tit_txt">苏州，中国首批24座国家历史文化名城之一，是吴文化的发祥地<br/>
+苏州园林是中国私家园林的代表，被联合国教科文组织列为世界文化遗产</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('苏州','深圳')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="苏州">苏州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="深圳">深圳</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>16</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>1.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('苏州','东莞')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="苏州">苏州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="东莞">东莞</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>50</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('苏州','广州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="苏州">苏州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="广州">广州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>65</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>29.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('苏州',淮安')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="苏州">苏州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="淮安">淮安</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>118</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>118</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('苏州',盐城')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="苏州">苏州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="盐城">盐城</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>95</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>95</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+<!--广州出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">广州出发<span>假期不觉到，处处风光好，假期真美妙</span></div>
+<p class="tit_txt">广州，五次被福布斯评为中国大陆最佳商业城市第一位
+<br/>是世界上唯一两千多年长盛不衰的大港，是“历久不衰的海上丝绸之路东方发祥地” </p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="苏州">苏州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>34</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="四会">四会</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>26</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="珠海">珠海</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>65</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="深圳">深圳</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>65</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="罗定">罗定</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>65</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>39.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="惠州">惠州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>70</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>39.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="河源">河源</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>86</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>49.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="阳江">阳江</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>90</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>49.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="广州">广州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="高州">高州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>140</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>99.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+  
+</div></div>
+
+
+
+
+
+<!--杭州出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg">
+<div class="tit">杭州出发<span>假期假期真是好，三天小假乐逍遥，心情乐淘淘</span></div>
+<p class="tit_txt">杭州以风景秀丽著称，素有“人间天堂”的美誉</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('杭州','芜湖')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="杭州">杭州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="芜湖">芜湖</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>44</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('杭州','开封')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="杭州">杭州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="开封">开封</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>54</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('杭州','洛阳')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="杭州">杭州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="洛阳">洛阳</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>60</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>29.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('杭州','郑州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="杭州">杭州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="郑州">郑州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>75</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>39.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('杭州','成都')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="杭州">杭州</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="成都">成都</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>72</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>39.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+
+<!--厦门出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">厦门出发<span>假期来，假期到，好事全部都来到</span></div>
+<p class="tit_txt">厦门，中国最早实行对外开放政策的四个经济特区之一<br/>
+是现代化国际性港口风景旅游城市，拥有第一批国家5A级旅游景区</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('厦门','青岛')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="厦门">厦门</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="青岛">青岛</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>23</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('厦门','苏州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="厦门">厦门</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="苏州">苏州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>30</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('厦门','上海')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="厦门">厦门</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="义乌">义乌</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>55</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="厦门">厦门</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="仙游">仙游</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>68</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>29.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="厦门">厦门</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="永安">永安</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>116</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>89.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+<!--南京出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">南京出发<span>“假期”活动五彩缤纷，假期快乐“五”比</span></div>
+<p class="tit_txt">南京，是中国四大古都之一，有“六朝古都”、“十朝都会”之称<br/>
+首座世界轮滑博物馆也将落户南京，地点确定在南京奥林匹克博物馆内</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('南京','芜湖')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="南京">南京</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="芜湖">芜湖</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>72</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>29.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('南京','开封')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="南京">南京</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="开封">开封</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>97</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>69.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('南京','洛阳')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="南京">南京</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="洛阳">洛阳</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>115</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>79.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('南京','张家界')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="南京">南京</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="张家界">张家界</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>120</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>89.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('南京','马鞍山')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="南京">南京</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="马鞍山">马鞍山</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>124</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>89.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+
+<!--昆明出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">昆明出发<span>五月微风好春光，槐花栀子竟飘香</span></div>
+<p class="tit_txt">昆明，享“春城”之美誉<br/>
+是东亚大陆与中南半岛、南亚次大陆各国进行经济贸易往来及政治联系的陆路枢纽</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('昆明','上海')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="昆明">昆明</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="上海">上海</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>120</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>79.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('昆明','苏州')">
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="昆明">昆明</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="苏州">苏州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>130</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>89.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="昆明">昆明</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="丘北">丘北</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>136</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>99.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="昆明">昆明</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="保山">保山</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>233</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>139.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:void(0)" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="昆明">昆明</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="腾冲">腾冲</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>260</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>229.9</b></span>
+                        <span class="btn_a btn_gray">即将开始</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+<!--盐城出发-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">盐城出发<span>假期劳动节，总算歇一歇，外出散散心，四处看看景</span></div>
+<p class="tit_txt">盐城，素有“鱼米之乡”的美称”<br/>
+有麋鹿和丹顶鹤两个国家级自然保护区</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('盐城','南京')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="盐城">盐城</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="南京">南京</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>60</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('盐城','苏州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="盐城">盐城</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="苏州">苏州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>64</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>19.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('盐城','扬州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="盐城">盐城</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="扬州">扬州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>95</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>59.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('盐城','义乌')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="盐城">盐城</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="义乌">义乌</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>95</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>59.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('盐城','镇江')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="盐城">盐城</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="镇江">镇江</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>118</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>79.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+
+<!--宁波专场-->
+<div class="main_wrap">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">宁波专场<span>假期佳节至，花儿朵朵俏，阳光丽日照，心情不受潮</span></div>
+<p class="tit_txt">宁波，2016年东亚文化之都<br/>
+是中国大运河南端出海口，“海上丝绸之路”东方始发港</p>
+</div>
+
+<div class="pannel">
+	      <ul class="ticket-list clearfix">
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('宁波','苏州')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="宁波">宁波</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="苏州">苏州</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>35</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('宁波','盐城')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="宁波">宁波</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="盐城">盐城</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>52</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>9.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+	      			 <li class="list-item">
+                       	<a href="javascript:goUrl('宁波','镇江')" >
+                      	<div class="ncoach">
+  						<div class="ncoach_name">
+  						<span class="ncoach_name_start" title="宁波">宁波</span><i class="ncoach_name_arrow"></i><span class="ncoach_name_end" title="镇江">镇江</span></div>  
+  						<div class="h20"></div>
+  						<div class="ncoach_type">
+    					<span class="ncoach_type_t1">原价：</span>
+                        <span class="ncoach_type_t2"><span>￥</span><del>73</del></span>
+                        <span class="ncoach_type_t3"><span>￥</span><b>29.9</b></span>
+                        <span class="btn_a btn_red">立刻抢购</span>
+  						</div>
+                        </div>
+                        </a>
+  					  </li> 
+                      </ul>
+  </div>
+  <a class="more" href="index.php"></a>
+</div></div>
+
+
+
+
+
+
+
+
+<!--main_wrap-->
+<div class="main_wrap1">
+<div class="main_wrapBox">
+<div class="banner banner_bg"><div class="tit">活动细则</div></div>
+<div class="h10"></div>
+<div class="det_box">
+<div class="det_top">本线路为车站直达线路，站外顺风车，不支持站内取票，乘车请联系短信内司机电话（12307官方认证并提供担保） 
+</div></div>
+
+<div class="h10"></div>
+<div class="det_box">
+<div class="det_ul">
+<ul>
+<li><span class="num">1</span><b>特价活动城市：</b>深圳、广州、上海、杭州、厦门、南京、苏州、昆明、南京等；
+</li><li><span class="num">2</span><b>特价线路数量：</b>每天每条线路共有<span class="yel">300张</span>特价票可供抢购，即每个时间点分别有<span class="yel">10张</span>特价票；
+</li><li><span class="num">3</span><b>抢票规则：</b>
+<br/>1) 活动当天可抢购三天以内的特价票；
+<br/>2) 特价线路不限班次，用户可根据需求购票，抢完即止；
+<br/>3) 活动期间，一个用户限定抢购一张特价票，同个ID、手机号算一个用户；
+<br/>4) 特价票不可转让、不可折现、不可退票，仅限本人使用；</li></ul>
+<div class="btn_box_c"><span class="btn_red">活动最终解释权归12307全国汽车票所有。</span></div>
+ </div>
+</div>
+</div>
+</div>      
+
+
+
+                      
+<!--底部-->
+<!--底部和调用-->
+<div class="h40"></div>
+<div class="footer">
+    <div class="footer-container">
+    <div class="copyrights">Copyright © 2015 12307.net，All Rights Reserved沪ICP备16020560号</div>
+    </div>
+</div>
+ <!--公用Foot和友情链接-->
+
+</body>
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d60748f2e1d27a897fdab1404d6761b6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span></html>

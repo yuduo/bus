@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"nanning","endCityName":"南宁","endCitySimplePinYin":"nn"},{"endCityFullPinYin":"guangzhou","endCityName":"广州","endCitySimplePinYin":"gz"},{"endCityFullPinYin":"dongguan","endCityName":"东莞","endCitySimplePinYin":"dg"},{"endCityFullPinYin":"shenzhen","endCityName":"深圳","endCitySimplePinYin":"sz"}]

@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>特价汽车票_12307全国汽车票</title>
+    <link href="http://cdn.12307.net/2015/image/favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站,特价汽车票" />
+    <meta name="description" content="12307线路时刻表频道页提供汽车票价格查询问题,提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！"/>
+    <link rel="stylesheet" href="http://cdn.12307.net/website/css/base.css" />
+   
+    <link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/ictiy.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/icity_list.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/zepto.alert.css" type="text/css">
+
+    
+    <link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/min-busbooking.css" type="text/css">
+<script type="text/javascript">    
+<?php
+
+
+$startCity= $detail['start'];
+$endCity=$detail['stop'];
+$ticketPrice=$detail['price'];
+$leftTicket=$lastOrder;
+
+?>
+</script>  
+</head>
+<body>
+<input type="hidden" id="passengerJson" value= '<?php echo $passengerJson;?>'/>
+	<input type="hidden" id="basePath" value="<?php echo $basePath ;?>" />
+	<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0" />
+	<input type="hidden" id="scheduleCode" value="<?php echo $scheduleCode;?>" />
+<div class="bodyhead">
+ <div class="main-wrap">
+  <h1 class="logo"><a title="12307全国汽车票网" href="http://www.12307.net">12307全国汽车票网</a></h1>
+  </div>
+<!--导航菜单-->
+ <div class="bodymenu">
+    <div class="mainnav">
+        <ul class="navmenu">
+        <li class="nav_0"><a class="" href="index.php" title="首页">首页</a></li>
+        <li class="nav_1"><a href="index.php" title="汽车票"  class="cur">汽车票</a></li>
+        <li class="nav_2"><a href="javascript:window.location.href='index.php?p=home&c=my&a=chat'"  title="在线咨询">在线咨询</a></li>
+        <li class="nav_3"><a href="aboutus.html" title="关于12307">关于12307</a></li>
+        
+        
+        </ul>
+        	        </div>
+	        
+	        </div>
+ </div>
+<div class="h15"></div>
+   <div class="main-wrap">
+<div id="main">
+		<div id="headerBox" class="headerBox">
+			<!--head--->
+			<article class="header">
+				<header>
+					
+					<h1>确定订单</h1>
+				</header>
+			</article>
+		</div>
+		<!--/head--->
+		<!--mainBox--->
+		<div id="mainBox">
+			<!--车票信息--->
+
+			<div class="h10"></div>
+			<div class="info_city_box">
+				<div class="orderinfo_title">
+					<div class="OIType">
+						<span><?php echo $startCity; ?>-<?php echo $endCity; ?></span>
+					</div>
+					<span class="OTime"><?php echo $detail['time'];?><?php echo $weekday[date('w', strtotime($date))];?></span>
+				</div>
+				<div class="OTitle">
+					<div class="Odtime">
+						<span>发车时间</span><b class="time_bg"><em><?php echo $detail['time'];?></em><i></i></b>
+					</div>
+				</div>
+
+				<div class="ol_begin">
+					<span class="oleft"><b class="traicon begin"></b><span><?php echo $detail['start_place']; ?></span></span> 
+					<span class="oright">票价:<i class="f12">￥</i><i class="cprice" id="busLineprice"><?php echo $detail['price'];?></i></span>
+				</div>
+				<div class="ol_end">
+					<span class="oleft"><b class="traicon end"></b><span><?php echo $detail['stop_place']; ?></span></span>
+					<span class="oright">余票：<i class="c333"><em class="cblue" id="yupiaoNumber"><?php echo $leftTicket; ?></em>张</i></span>
+				</div>
+
+				<div class="buynum">
+					<label class="subperson f_l"><a>减少<em class="num_bg"></em></a></label> <span><b id="piaoNumber">1</b></span> <label class="addperson f_r"><a>增加<em class="num_bg"></em></a></label>
+				</div>
+			</div>
+			<!--车票信息/--->
+
+			<!--/取票人信息--->
+			<div class="bkBox">
+				<div class="addPerT addPerTT" id="selectPerson">
+					<span>取票人信息 </span><i>(接受短信通知)</i>
+				</div>
+				<div class="perlist_box">
+					<ul>
+						<li><label>姓 名：</label>
+							<div class="input_box_div">
+								<input id="name" class="li_input" placeholder="输入您的真实姓名">
+							</div></li>
+						<li><label>手机号：</label>
+							<div class="input_box_div">
+								<input id="phone" class="li_input" placeholder="请输入您的联系电话">
+							</div></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 优惠券 -->
+			<div class="bkBox">
+        		<div class="BXBoxT" id="CopoBoxa"><span>优惠劵</span> <span class="copo_price"><b>0</b>元</span></div>
+        	</div>
+			<!--车票信息/--->
+			<div class="bkBox">
+				<div class="BXBoxT" id="LeafletBoxa">
+					<span>乘车、退票须知</span>
+				</div>
+				</span>
+			</div>
+		</div>
+
+
+		<div class="h50"></div>
+		<div class="order_footer">
+			<div class="qcp_plr10">
+				<div class="order_f1">
+					<div class="order_price1">
+						<em>￥</em><b id="totalPrice">380</b><span>（共<b id="totalpNum">1</b>人）
+						</span>
+					</div>
+					<div class="order_price2">订单总价</div>
+				</div>
+				<div class="order_f2 btnRed" id="searchSubmit">
+					<a href="javascript:void(0);">确认订单</a>
+				</div>
+				<!---btnGray-->
+			</div>
+		</div>
+
+	</div>
+
+	<!--/主页面层--->
+
+	<!--请选择乘车人--->
+	<nav id="personinfoPage" class="infoPage">
+		<nav class="contact_info">
+			<article class="header">
+				<header>
+					<i class="returnico personinfoPage_close" title="返回"></i>
+					<h1 id="titleName"></h1>
+				</header>
+			</article>
+
+			<section class="sPerBox">
+				<div class="addPerTB add_contact" id="add_contact">
+					<span>增加乘车人</span>
+				</div>
+				<ul class="list radios" id="contactsDiv"></ul>
+				<div class="btnRed" id="confirmS">确 定</div>
+			</section>
+		</nav>
+
+		<!--编辑乘客信息--->
+		<nav class="contact_info_add_box" id="contact_info_add_box">
+			<nav class="contact_info_add">
+				<article class="header">
+					<header>
+						<i class="returnico contact_info_close" title="返回"></i>
+						<h1></h1>
+						<i class="errorico contact_info_close" title="关闭"></i>
+					</header>
+				</article>
+				<section class="APerBox">
+					<ul class="orderinfo_div">
+						<li><p class="p">真实姓名</p>
+							<div>
+								<input class="add-input" type="hidden" id="add_passengerId" value="0"> <input class="add-input" placeholder="请输入真实姓名" id="add_passengerName">
+							</div></li>
+						<li><p class="p">手机号码</p>
+							<div>
+								<input maxlength="11" class="add-input" placeholder="请输入手机号码" id="add_mobilePhone">
+							</div></li>
+						<li><p class="p">身份证号</p>
+							<div>
+								<input maxlength="18" class="add-input" placeholder="请输入身份证号码" id="add_certificateNo">
+							</div></li>
+					</ul>
+					<div class="btnbox" id="subAddOrUpdatePassenger">
+						<div class="btnRed" id="addOrUpdate">确定添加</div>
+					</div>
+				</section>
+			</nav>
+		</nav>
+		<!--编辑乘客信息/--->
+	</nav>
+	<!--请选择乘车人/--->
+
+	<!--预订、取票、退票须知--->
+	<nav id="LeafletBox" class="infoPage">
+		<nav class="contact_info">
+			<article class="header">
+				<header>
+					<i class="returnico infoPage_close" title="返回"></i>
+					<h1>预订、取票、退票须知</h1>
+				</header>
+			</article>
+
+			<section class="LeafletCon">
+				<h2>退票须知</h2>    
+			    <p><span class="c666">1. </span>离开车时间<span class="cred">2小时前</span>办理退票，按票面额<span class="cred">10%</span>计收退票费;</p>
+			    <p><span class="c666">2. </span>离开车时间<span class="cred">2小时以内</span>办理退票，按票面额<span class="cred">20%</span>计收退票费;</p>
+			    <p><span class="c666">3. </span>发车后办理退票，扣票面额<span class="cred">100%</span>收取退票费；
+				<p><span class="c666">3. </span>发车后不办理退票；
+			    </p><p><span class="c666">4. </span>退票费是由于旅客自身原因退票才收取，如果是由于大雾等客观原因造成的班车延误，旅客退票，则不收取退票费；
+			    </p><p><span class="c666">5. </span>所有在线退票，原预订的<span class="cred">保险款不予退还</span>。
+			    </p><p><span class="c666">6. </span>应退票款按银行规定时限退还至购票时所使用的网上支付工具账户，请注意查询，如有疑问请致电12307人工客服查询。
+			    </p>
+			</section>
+		</nav>
+	</nav>
+	<nav id="CopoBox" class="infoPage bggray2" style="display: none;">
+		<nav class="contact_info">
+		<article class="header">
+		<header>
+		    <i class="returnico infoPage_close" title="返回"></i>
+		    <h1>优惠劵</h1>
+		</header>
+		</article>
+		 <section class="">
+			<div class="copo_box"> 
+			    <div id="useCouponList">
+				    <!--/*无数据*/-->
+					<div id="npagetip" class="npagetip">
+						<div class="npt_img npt_img1"></div>
+						<p class="npt_txt">没有可用优惠券</p>
+					</div>
+					<!--/*无数据*/-->
+			    </div>
+			    <div class="h50"></div>
+			    <a class="copo_btno"><span>不使用优惠券</span></a>
+			</div>
+		 </section>
+		 </nav>
+	 </nav>
+	<input type="hidden" id="accToken" value="<?php echo $accToken;?>">
+	<input type="hidden" id="scheduleCode" value="<?php echo $detail['scheduleCode'];?>">
+	<input type="hidden" id="startPlace" value="<?php echo $detail['start_place'];?>">
+	<input type="hidden" id="endPlace" value="<?php echo $detail['stop_place'];?>">
+	<input type="hidden" id="startTime" value="<?php echo $detail['time'];?>">
+	<input type="hidden" id="lineType" value="2" />
+	<input type="hidden" id="customerId" value="<?php echo $detail['customerId'];?>" />
+		
+    </div>
+   
+</div>
+
+<input type="hidden" id="timesType" value="0"/>
+<input type="hidden" id="stationName" value="0"/>
+
+
+<!--公用Foot和友情链接-->
+<div class="h20"></div>
+ <div class="footer">
+  <div class="footer-hd">
+    <p>
+      <a href="http://www.12306.cn" target="_blank" title="火车票网上订票">火车票网上订票</a>
+      <b>|</b>
+      <a href="http://trip.taobao.com" target="_blank" title="淘宝旅行">淘宝旅行</a>
+      <b>|</b>
+      <a href="http://www.qunar.com" target="_blank" title="去哪儿网">去哪儿网</a>
+      <b>|</b>
+      <a href="http://www.tieyou.com" target="_blank" title="铁友网">铁友网</a>
+    </p>
+  </div>
+  <div class="footer-bd">
+    <p>
+      <a  title="关于12307" href="aboutus.html">关于12307</a>
+      <a  title="联系我们"  href="contactus.html">联系我们</a>
+      <a  title="服务协议"   href="agree.html">服务协议</a>
+      <a  title="诚征英才" href="jobs.html">诚征英才</a>
+      <a  title="常见问题" href="question.html">常见问题</a>
+    </p>
+    <p>
+      <em>&copy; 2014 12307 版权所有</em>
+      <b>|</b>
+      <span><a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备16020560号</a></span>
+    </p>
+  </div>
+</div>
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/require.min.js"></script>
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/bus/common/busbooking-main.js"></script>
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d60748f2e1d27a897fdab1404d6761b6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+</html>

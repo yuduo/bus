@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"tianjin","endCityName":"天津","endCitySimplePinYin":"tj"},{"endCityFullPinYin":"puyang","endCityName":"濮阳","endCitySimplePinYin":"py"},{"endCityFullPinYin":"qitaihe","endCityName":"七台河","endCitySimplePinYin":"qth"},{"endCityFullPinYin":"daqing","endCityName":"大庆","endCitySimplePinYin":"dq"}]

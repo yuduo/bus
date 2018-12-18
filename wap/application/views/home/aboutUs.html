@@ -1,0 +1,194 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="copyright" content="Copyright (c) 2014 12307.net ">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<title>12307-全国大巴,长途汽车线路时刻表_汽车票查询_</title>
+<meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站,特价汽车票" />
+<meta name="description" content="12307是提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！" />
+<link href="http://cdn.12307.net/wxclient/v3.0/css/base.css" type="text/css" rel="stylesheet">
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body class="header">
+	<div class="qcp_main" id="page">
+		<header>
+			<h1>关于12307</h1>
+		</header>
+		<!--主页面层--->
+
+		<div class="qcp_pa10 f14 lh24">
+			<!--<p class="cblue1 f16">12307长途顺风车</p>-->
+			<div class="h5"></div>
+			<div>
+			  <p class="btnBlue"> <strong>上海堆栈智能科技有限公司</strong></p>
+			  <p>&nbsp;</p>
+              
+			  <p>上海堆栈智能科技有限公司成立于2016，在共享经济的浪潮下，响应国家的号召，做大巴众包的领导者，为用户和企业降低出行成本而努力。公司秉承互联网思维以&ldquo;共建、服务、高效、分享&ldquo;为运营理念。构建全国客运企业、机构单位以道路客运信息服务运营平台为核心的网络平台。</p>
+		  </div>
+			<div>
+			  <p class="cblue">&nbsp; </p>
+			  <p class="btnBlue"><strong>12307特价汽车票网 </strong></p>
+			  <p>&nbsp;</p>
+			  <p>提供全国汽车票（www.12307.net）、手机移动端（m.12307.net）、官方微信公众号（my12307）无线客户端等  平台。为旅客提供大巴众包、汽车票网上购票、公路出行需求的在线咨询、汽车票、汽车时刻表查询和汽车站信息查询等综合性服务。减轻客运运营的压力，提高交  通运载效力，安全出行、便捷出行，为旅客和客运企业提供一站式出行服务！</p>
+		  </div>
+			<p class="qcp_plr10 t_i2">&nbsp;</p>
+		</div>
+
+<p></p><p></p><p></p>
+
+<p></p><p></p><p></p>
+<div class="qcp_pa10 f14 lh24">
+<p class="cblue">&nbsp;</p>
+<p class="btnBlue"><strong>联系方式：</strong></p>
+<p class="cblue">&nbsp;</p>
+<p class="qcp_plr10 t_i2">电话021 52686208</p>
+<p class="qcp_plr10 t_i2">手机号码 15601903152。</p>
+<p class="qcp_plr10 t_i2">QQ 15601903152</p>
+<p>微信公众号 my12307</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p class="qcp_plr10 t_i2">地址：上海市金山区秋实路688号254室</p>
+<p class="qcp_plr10 t_i2">&nbsp;</p>
+
+</div>
+<div class="qcp_pa10 f14 lh24">
+<!--百度地图容器-->
+  <!--百度地图容器-->
+  <div style="width:320px;height:320px;border:#ccc solid 1px;" id="dituContent"></div>
+<div class="h40"></div>
+
+<!--底部--->
+<div class="h50"></div>
+<footer class="footerBar">
+	<a class="tab_1 " href="javascript:window.location.href='index.php';">车票</a>
+    <a class="tab_2 " href="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=9147846&userId=21032841'">在线咨询<span class="_order_notice_num"></span></a>
+    <a class="tab_3 " href="javascript:window.location.href='index.php?p=home&c=my'">我的</a>
+    <a class="tab_4 " href="javascript:window.location.href='index.php?p=home&c=my&a=aboutus'">关于我们</a>
+</footer>
+<!--/底部--->
+
+
+
+		<!--/主页面层--->
+	</div>
+
+
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(121.281521,30.729258);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.disableDragging();//禁用地图拖拽事件
+        map.disableScrollWheelZoom();//禁用地图滚轮放大缩小，默认禁用(可不写)
+        map.disableDoubleClickZoom();//禁用鼠标双击放大
+        map.disableKeyboard();//禁用键盘上下左右键移动地图，默认禁用(可不写)
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+                //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"上海堆栈智能科技",content:"12307.net",point:"121.280856|30.729289",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7cffe8c85da9777cb852d9c371ff0b10";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+</html>

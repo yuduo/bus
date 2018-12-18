@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"haikou","endCityName":"海口","endCitySimplePinYin":"hk"},{"endCityFullPinYin":"zhanjiang","endCityName":"湛江","endCitySimplePinYin":"zj"}]

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"><!--Ajax跨域问题浏览器兼容性-->
+    <link rel="shortcut icon" href="http://cdn.12307.net/wxclient/v3.0/image/favicon.ico" type="http://cdn.12307.net/wxclient/v3.0/image/x-icon" />  
+    <title>订单查询</title>
+    <meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站" />
+    <meta name="description" content="12307是提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！"/>
+
+	<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/min-orderlist.css" type="text/css">
+</head>
+<body onselectstart="return false" class="bgray"><!--使网页的内容无法被鼠标或键盘选定-->
+<input type="hidden" id="accToken" value="<?php echo $accToken ;?>">
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+<div id="main">
+<div id="headerBox" class="headerBox">
+<!--head--->   
+<article class="header">
+<header>
+	<h1>订单查询</h1>
+	<a index="1"><span class="text">历史订单</span></a>
+</header>
+</article>
+</div>
+	<!--/head---> 
+	<!--mainBox--->
+	<div id="mainBox">
+	    <div id="orderDiv" class="orderDiv"></div>
+		<div class="slb_more" style="display:none"><div class="slb_loading"><img id="loadImage" src="http://cdn.12307.net/wxclient/v3.0/image/loading_a.gif"><span id="morecontent">加载更多……</span></div></div>
+	</div>
+	<div class="widow-view-box _cancel_window" style="display:none;">
+			<div class="widow-pop-box">
+				<div class="widow-hd">温馨提示</div>
+				<div class="widow-bd">
+					<div class="widow-tips">您即将取消所选订单，该操作不可恢复！</div>
+					<ul class="widow-roller-btns">
+						<a class ="_window_close"><li class="widow-flexbd widow-btns-cancel">取消</li></a>
+						<input type ="hidden" id="orderNo" value=""/>
+						<a id="sureCancel"><li class="widow-flexbd widow-btns-confirm">确认</li></a>
+					</ul>
+				</div>
+			</div>
+	</div>
+	<div class="widow-view-box _delete_window" style="display:none;">
+			<div class="widow-pop-box">
+				<div class="widow-hd">温馨提示</div>
+				<div class="widow-bd">
+					<div class="widow-tips">您确定要删除该订单吗，该操作不可恢复？</div>
+					<ul class="widow-roller-btns">
+						<a class="_window_close"><li class="widow-flexbd widow-btns-cancel">取消</li></a>
+						<input type ="hidden" id="orderNo" value=""/>
+						<a id="sureDelete"><li class="widow-flexbd widow-btns-confirm">确认</li></a>
+					</ul>
+				</div>
+			</div>
+	</div>
+    <!--底部公用-->
+    <!--底部--->
+    <footer>
+    <div class="h50"></div>
+    <article class="footerBar">
+    <a class="tab_1 " href="javascript:window.location.href='index.php';">车票</a>
+    <a class="tab_2 " href="javascript:window.location.href='index.php?p=home&c=my&a=chat">在线咨询<span class="_order_notice_num"></span></a>
+    <a class="tab_3 " href="javascript:window.location.href='index.php?p=home&c=my">我的</a>
+    </article>
+    	
+    </footer>
+</div>
+<!--温馨提示--->
+<div class="widow_code_box" style="left: 50%;top: 50%;margin-top:-80px;margin-left:-80px;position: fixed;background: rgba(0,0,0,0.8);width: 160px;height: 160px;border-radius: 10px;">
+	<div class="code_img_box">
+		<div id="qrcode" style="width:130px; height:130px;"></div>
+	</div>
+</div>
+<!--/温馨提示--->  
+<!-- 条形码 -->
+<nav id="BarCodeBox" class="infoPage bggray2 _barpage_close" style="display: none;">
+	<nav class="contact_info">
+		<article class="header">
+		<header>
+		    <i class="returnico infoPage_close" title="返回"></i>
+		    <h1>加条形码</h1>
+		</header>
+		</article>
+	
+		 <section>
+		  	<div class="BCode_box"> 
+			    <ul id="_barBody">
+			    </ul>
+			    <div class="h50"></div>
+			    <a class="copo_btno _barpage_close"><span>返回上一页</span></a>
+			</div>
+		 </section>
+	 </nav>
+</nav>
+<!-- 二维码 -->
+<nav id="QRCodeBox" class="infoPage _barpage_close" style="display: none;">
+	<nav class="contact_info">
+	<article class="header">
+	<header>
+	    <i class="returnico infoPage_close" title="返回"></i>
+	    <h1>旅客凭此二维码上车</h1>
+	</header>
+	</article>
+	<section>
+	  <div class="QRCode_box"> 
+	    <ul  id="_qrBody"> 
+	    </ul>
+	    <div class="h50"></div>
+	    <a class="copo_btno _barpage_close"><span>返回上一页</span></a>
+	  </div>
+	</section>
+ 	</nav>
+ </nav>
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/require.min.js"></script>
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/common/orderList-main.js"></script>
+</body>
+</html>

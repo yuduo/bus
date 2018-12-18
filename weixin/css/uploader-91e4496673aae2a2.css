@@ -1,0 +1,129 @@
+.limit_error {
+  color: red;
+  padding: 2px;
+  word-break: break-all;
+}
+
+.limit_error a {
+  color: #369;
+  text-decoration: underline;
+}
+
+.moxie-shim-html4 input {
+  filter: alpha(opacity=0);
+}
+
+.zbj-uploadfile-list {
+  margin: 0;
+  padding: 0;
+  padding-top: 1px;
+  overflow: hidden;
+}
+
+.zbj-uploadfile-list * {
+  box-sizing: content-box;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-item {
+  background: #f6f9fb;
+  height: 28px !important;
+  line-height: 28px !important;
+  color: #666;
+  position: relative;
+  border: 1px solid #e1eef8;
+  margin-bottom: 1px;
+  list-style-type: none;
+  margin-top: 0;
+  padding: 2px;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-percent-ui {
+  background: #e1eef8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-item-detail {
+  position: relative;
+  z-index: 2;
+  bottom: inherit;
+  text-align: left;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-name {
+  background: url("/output/components/uploader-qiniu/default/attachbg.png?_=37e7f2badd3d8bbc") no-repeat 8px center;
+  padding-left: 31px;
+  overflow: hidden;
+  height: 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  right: 230px;
+  top: 0;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-item-detail .zbj-uploadfile-status {
+  position: static;
+  color: #666;
+  font-size: 12px;
+  float: right;
+  width: 200px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-item-detail .zbj-uploadfile-percent-val {
+  display: none;
+  position: static;
+  font-size: 12px;
+  float: right;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-delete {
+  background: #fff;
+  border-radius: 50%;
+  height: 16px;
+  line-height: 16px;
+  margin-top: 6px;
+  width: 16px;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 13px;
+  float: right;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-uploading .zbj-uploadfile-percent-val {
+  display: block;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-uploading .zbj-uploadfile-status {
+  display: none;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-uploadfail .zbj-uploadfile-percent-ui {
+  display: none;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-uploadfail {
+  border-color: #e9e9e9;
+  background: #e9e9e9;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-uploadfail .zbj-uploadfile-status {
+  display: block;
+}
+
+.zbj-uploadfile-list .zbj-uploadfile-uploadfail .zbj-uploadfile-percent-val {
+  display: none;
+}
+
+.add-file .zbj-uploadfile-name {
+  width: 90px;
+}

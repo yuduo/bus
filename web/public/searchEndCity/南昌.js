@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"wuhu","endCityName":"芜湖","endCitySimplePinYin":"wh"},{"endCityFullPinYin":"maanshan","endCityName":"马鞍山","endCitySimplePinYin":"mas"},{"endCityFullPinYin":"nanjing","endCityName":"南京","endCitySimplePinYin":"nj"},{"endCityFullPinYin":"shenzhen","endCityName":"深圳","endCitySimplePinYin":"sz"}]

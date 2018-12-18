@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<!--Ajax跨域问题浏览器兼容性-->
+<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
+<title>特价汽车票</title>
+<meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站" />
+<meta name="description" content="12307提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站!" />
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/ictiy.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/zepto.alert.css" type="text/css">
+
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/require.min.js" data-main="http://cdn.12307.net/wxclient/v3.0/js/citybus/common/citybusDetail-main"></script>
+</head>
+<body>
+	<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+	<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+	<!--使网页的内容无法被鼠标或键盘选定-->
+	<div id="main">
+		<div id="headerBox" class="headerBox">
+			<!--head--->
+			<article class="header">
+				<header>
+					<a class="header_left" href="javascript:history.go(-1);"><i class="returnico" id="pageBack"></i></a>
+					<h1>城际专线线路详情</h1>
+				</header>
+			</article>
+		</div>
+		<!--/head--->
+		<!--mainBox--->
+		<div id="mainBox">
+			<div class="prompTipY"><p><?php if($times['is_sale'] ==1){ ;?>本线路为车站直达线路，站外顺风车，不支持站内取票，乘车请联系短信内司机电话（12307官方认证并提供担保）<?php }else{;?>本线路为车站直达线路,不支持网上退定改签,如要退票请到车站取好纸制车票,在车站退票窗口退票.<?php };?></p></div>
+			<div class="main_con">
+				<!--/立即预订--->
+				<div class="main_bod">
+					<div class="ol_tit">
+						<span class="oleft"></span><span class="oright"><span class="cdate"><?php echo $date;?></span><span class="cstar"><?php echo $weekday[date('w', strtotime($date))];?></span></span>
+					</div>
+					<div class="ol_time">
+						<b class="c333"><?php echo $times['time'];?></b><span>发车</span>
+					</div>
+		            		<div class="ol_begin" data-name="<?php echo $line['start'];?>" longitude="" latitude="">
+								<span class="oleft"><b class="traicon begin"></b><span><?php echo $line['start'];?>&nbsp;</span></span>
+								<span class="oright"><i class="cprice"><?php echo $times['price'];?></i></span>
+							</div>
+							<div class="ol_end" data-name="<?php echo $line['stop'];?>" longitude="" latitude="">
+								<span class="oleft"><b class="traicon end"></b><span><?php echo $line['stop'];?>&nbsp;</span></span>
+								<span class="oright">有票</span>
+							</div>
+				</div>
+				<!--立即预订/--->
+			</div>
+			<!--/巴士信息--->
+		<!--/途经路线--->
+		<div class="line_box">
+			<div class="lb_tit">
+				<span>途经路线</span>
+			</div>
+			<div id="wrapper" class="bus_scroll bus_radio">
+				<ul class="bus_line">        
+			        <li class="bus_stop cur startPlace" starttime="17:30" data-name="<?php echo $times['start_place'];?>">
+			        	<span class="bus_stop_line" data-name="<?php echo $times['start_place'];?>" longitude="" latitude="">
+				        	<span class="bus_stop_sign sign1"></span>
+			        	</span>
+				        <span class="bus_stop_time"><?php echo $times['time'] ;?></span>
+				        <span class="bus_stop_text"><?php echo $times['start_place'];?></span>
+				    </li>
+			        <li class="bus_stop cur endPlace" starttime="" data-name="<?php echo $times['stop_place'];?>">
+			        	<span class="bus_stop_line" data-name="<?php echo $times['stop_place'];?>" longitude="" latitude="">
+				        	<span class="bus_stop_sign sign4"></span>
+			        	</span>
+				        <span class="bus_stop_time"></span>
+				        <span class="bus_stop_text"><?php echo $times['stop_place'];?></span>
+				    </li>
+				</ul>
+			</div>
+		</div>
+		<!--/途经路线--->
+			<div class="BIBox">
+				<div class="bus_info">巴士信息</div>
+				<div class="perlist_box">
+					<ul>
+						<li><label>司<i>机：</i></label>
+							<div class="input_box_div">
+								<div class="li_input"><?php echo $driver_info['name'] ;?>&nbsp;</div>
+							</div></li>
+						<li><label>联系电话：</label>
+							<div class="input_box_div">
+								<div class="li_input">
+											<a href="tel:15601903152"><?php echo $driver_info['phone'] ;?>&nbsp;</a>
+								</div>
+							</div></li>
+
+						<li><label>车牌信息：</label>
+							<div class="input_box_div">
+								<div class="li_input">&nbsp;<?php echo $driver_info['plate_number'] ;?></div>
+							</div></li>
+
+						<li><label>客运企业：</label>
+							<div class="input_box_div">
+								<div class="li_input"><?php echo  $driver_info['company'] ;?>&nbsp;</div>
+							</div></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<!--巴士信息/--->
+			<!--购票详情/--->
+			<!--购票详情/--->
+		</div>
+		<!--检票、退票须知/--->
+		<div class="bkBox bggray">
+        	<div class="BXBoxT" id="LeafletBoxa"><span>检票、退票须知</span></div>
+        </div>
+		<!--底部--->
+		<div class="h50"></div>
+		<div class="order_footer" id="foot_float">
+			<div class="qcp_plr10">
+				<div class="order_f3 btnRed">
+					<a id="searchSubmit" href="javascript:void(0);">立即预订</a>
+				</div>
+				<!---btnGray-->
+			</div>
+		</div>
+	</div>
+	<!-- 地图--->
+	<nav id="MapBox" class="infoPage">
+		<nav class="contact_info">
+			<article class="header">
+				<header>
+					<i class="returnico infoPage_close" title="返回"></i>
+					<h1>地图</h1>
+				</header>
+			</article>
+			<section class="LeafletCon">
+				<div class="cmap_box" style="background: #f0f0f0">
+					<div id="baiduMap" style="width: 100%;height:100%;"></div>
+				</div>
+			</section>
+		</nav>
+	</nav> 
+	<!--预订、取票、退票须知--->
+	<nav id="LeafletBox" class="infoPage">
+		<nav class="contact_info">
+			<article class="header">
+				<header>
+				    <i class="returnico infoPage_close" title="返回"></i>
+				    <h1>检票、退票须知</h1>
+				</header>
+			</article>
+		
+		 	<section class="LeafletCon">
+		     	<h2>检票</h2>    
+		    	<p>旅客购票成功后，凭二维码或取票联系人电话号码检票可直接上车。</p>
+		    	<h2>退票须知</h2>    
+			    <p><span class="c666">1. </span>离开车时间<span class="cred">2小时前</span>办理退票，按票面额<span class="cred">20%</span>计收退票费;</p>
+			    <p><span class="c666">2. </span>离开车时间<span class="cred">2小时以内</span>办理退票，按票面额<span class="cred">50%</span>计收退票费;</p>
+			    <p><span class="c666">3. </span>发车后办理退票，扣票面额<span class="cred">100%</span>收取退票费；
+				<p><span class="c666">3. </span>发车后不办理退票；
+			    </p><p><span class="c666">4. </span>退票费是由于旅客自身原因退票才收取，如果是由于大雾等客观原因造成的班车延误，旅客退票，则不收取退票费；
+			    </p><p><span class="c666">5. </span>所有在线退票，原预订的<span class="cred">保险款不予退还</span>。
+			    </p><p><span class="c666">6. </span>应退票款按银行规定时限退还至购票时所使用的网上支付工具账户，请注意查询，如有疑问请致电12307人工客服查询。
+			    </p>
+			</section>
+		 </nav>
+	</nav>
+    <input type="hidden" id="startPlace" value="<?php echo $times['start_place'];?>">
+	<input type="hidden" id="endPlace" value="<?php echo $times['stop_place'];?>">
+	<input type="hidden" id="startTime" value="<?php echo $times['time'];?>">
+<input type="hidden" id="scheduleCode" value="<?php echo $times['scheduleCode'];?>">
+	<input type="hidden" id="leaveSeat" value="<?php echo $times['ticket'];?>"> 
+	<input type='hidden' id='date' value="<?php echo $date;?>">
+</body>
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7cffe8c85da9777cb852d9c371ff0b10";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+</html>

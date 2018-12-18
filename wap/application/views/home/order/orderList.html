@@ -1,0 +1,18 @@
+	   
+        <?php  foreach ($myorderinfo as $v) : ?>
+        <!--其它订单状态-->
+	    <div class="ol_tab">
+	     <a href="index.php?p=home&c=my&a=orderDetails&orderNo=<?php echo $v['orderNum'];?>">
+	        <div class="ol_top">
+		        <span class="oleft">订单号：<b><?php echo $v['orderNum'];?></b></span>
+		        	<span class="oright c666">订单关闭</span>
+        	</div>
+	        <div class="ol_begin"><span class="oleft"><b class="traicon begin"></b><?php echo $v['start_place'];?></span><span class="oright">￥<b><?php echo $v['price'];?></b></span></div>
+	        <div class="ol_end"><span class="oleft"><b class="traicon end"></b><?php echo $v['stop_place'];?></span></div>
+	        <div class="ol_bot"><span class="oleft"><b class="traicon time"></b>发车时间<?php echo $v['date'];?> &nbsp; <?php echo date('H:i',$v['time']);?> </span></div>
+	    </a>
+      	<div class="ol_btn">
+            <span class="btnWhiteSm _deleteOrder" orderNo="<?php echo $v['orderNum'];?>">删除订单</span>
+        </div>
+	    </div>
+	   <?php endforeach;?>

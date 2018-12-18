@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"><!--Ajax跨域问题浏览器兼容性-->
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />   
+    <title>12307-温馨提示</title>
+    <style type="text/css">
+	    *{margin: 0;padding: 0;}ol,ul,li{list-style:none;}:focus {outline: 0;}img, button, input {border: 0;}h1,h2,h3,h4,h5,h6{font-weight: 400}
+		a,a:hover{text-decoration:none;}body{ background:#f7f7f7}
+		/*头部*/
+		.header{width:100%;height:44px;background:#00a1ec; position:relative;}
+		.header h1{color:#fff;width:100%; font-size:20px;line-height:44px;text-align:center;}
+		.header h1 a{color:#fff;}
+		.header h1 span{ position:relative; top:-2px; padding:0 3px;}
+		.header .header_right,.header .errorico{position:absolute;right:0;top:0;height:44px;width:44px;}
+		.header .header_left,.header .returnico{position:absolute;left:0;top:0;height:44px;width:44px;}
+		.mapico{ position:relative; width:44px;height:44px; display:inline-block;}
+		.returnico:before{background:url(../wxclient/v3.0/css/img/list.png) no-repeat;background-size:80px auto;content:'';background-position:-65px -18px;position:absolute;top:50%; margin-top:-12px;left:14px;display:inline-block;border-width:0;width:24px;height:24px;}
+		/*无数据*/
+		.nodata{ margin:0 auto; text-align:center; height:210px;width:100%; position:absolute; z-index:-1; top:50%; left:0;  margin-top:-85px;}
+		.nd_img{background:url(../wxclient/v3.0/css/img/nodata.png) no-repeat;background-size:175px auto; width:175px; height:118px;display:inline-block;}
+		.nd_txt{ color:#333; font-size:14px; padding:15px 0 15px 0;}
+		.nd_btn_box{text-align:center}
+		.nd_btn{ color:#00a1ec;height: 34px; border:1px solid #20acee; padding:0 40px;display: inline-block;font-size: 16px;text-align: center;line-height: 34px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; vertical-align:middle;}
+		.nd_btn:hover{border-color: #048fd0;color:#048fd0;}
+	</style>
+    
+</head>
+<body onselectstart="return false"><!--使网页的内容无法被鼠标或键盘选定-->
+<div id="main">
+<div id="headerBox" class="headerBox">
+<!--mainBox--->
+<div id="mainBox"> 
+<!--/*无数据*/-->
+<div id="nodata" class="nodata">
+<div class="nd_img"></div>
+<p class="nd_txt">线路异常,暂未开通!</p>
+<div class="nd_btn_box"><a class="nd_btn _index" >邀请司机开通</a></div>
+</div>
+<!--/*无数据*/-->
+
+</div></div>
+</body>
+</html>

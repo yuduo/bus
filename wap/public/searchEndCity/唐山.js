@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"huhehaote","endCityName":"呼和浩特","endCitySimplePinYin":"hhht"},{"endCityFullPinYin":"nanjing","endCityName":"南京","endCitySimplePinYin":"nj"}]

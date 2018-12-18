@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>12307全国汽车票</title>
+
+<meta name="viewport"
+
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/base.css" type="text/css">
+
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/pay.css" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="http://cdn.12307.net/wxclient/v3.0/css/sys.css">
+
+
+</head>
+
+
+
+<body>
+
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+
+<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+
+<a name="top"></a>
+
+<div id="main">
+
+	<div id="headerBox" class="headerBox">
+
+	<!--head--->   
+
+	<article class="header">
+
+	<header>
+
+	    <h1>支付中转</h1>
+
+	</header>
+
+	</article>
+
+	</div>
+
+	<div class="pay_zz">
+
+		<span id="wxTip" style="display:none;">
+
+			请点击微信右上角,<br>
+
+			选择其它浏览器打开进行支付。<br>
+
+			或跳转到【<a href="../user/myOrder.html">我的订单</a>】重新选择支付方式
+
+		</span>
+
+		<span id="otherTip" style="display:none;">
+
+			<P>正在转向中，请稍后…</P>
+
+			如果系统长时间无响应，<br>
+
+			请<a href="../alipay/payOrder.php?orderId=">单击此处</a>跳转
+
+		</span>
+
+	</div>
+
+	<form id="alipaysubmit" name="alipaysubmit" action="https://mapi.alipay.com/gateway.do?_input_charset=utf-8" method="get">
+    <input type="hidden" name="sign" value="<?php echo $sign ;?>"/>
+    <input type="hidden" name="_input_charset" value="utf-8"/>
+    <input type="hidden" name="subject" value="<?php echo $subject ;?>"/>
+    <input type="hidden" name="total_fee" value="<?php echo $total_fee ;?>"/>
+    <input type="hidden" name="sign_type" value="MD5"/>
+    <input type="hidden" name="service" value="alipay.wap.create.direct.pay.by.user"/>
+    <input type="hidden" name="notify_url" value="<?php echo $notify_url ;?>"/>
+    <input type="hidden" name="partner" value="<?php echo $partner ;?>"/>
+    <input type="hidden" name="seller_id" value="<?php echo $seller_id ;?>"/>
+    <input type="hidden" name="out_trade_no" value="<?php echo $out_trade_no ;?>"/>
+    <input type="hidden" name="payment_type" value="<?php echo $payment_type ;?>"/>
+    <input type="hidden" name="return_url" value="<?php echo $return_url ;?>"/>
+    <input type="hidden" name="show_url" value="<?php echo $show_url ;?>"/>
+    <input type="submit" value="确认" style="display:none;"></form>
+
+	<script type="text/javascript">
+
+	var ua = window.navigator.userAgent.toLowerCase();
+
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+
+        console.log("微信内嵌");
+
+        document.getElementById("wxTip").style.display = "block";
+
+    }else{
+
+        document.getElementById("otherTip").style.display = "block";
+
+    	try{document.all.alipaysubmit.submit();}catch(e){}
+
+    }
+
+	</script>
+
+</div>
+
+</body>
+
+</html>

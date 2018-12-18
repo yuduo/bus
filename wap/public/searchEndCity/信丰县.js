@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"ganzhou","endCityName":"赣州","endCitySimplePinYin":"gz"}]

@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"mengzi","endCityName":"蒙自","endCitySimplePinYin":"mz"},{"endCityFullPinYin":"xingdaohu","endCityName":"星岛湖","endCitySimplePinYin":"xdh"}]

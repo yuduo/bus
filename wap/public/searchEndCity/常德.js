@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"dongguan","endCityName":"东莞","endCitySimplePinYin":"dg"},{"endCityFullPinYin":"shenzhen","endCityName":"深圳","endCitySimplePinYin":"sz"},{"endCityFullPinYin":"fenghuang","endCityName":"凤凰","endCitySimplePinYin":"fh"}]

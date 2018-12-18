@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"anyang","endCityName":"安阳","endCitySimplePinYin":"ay"},{"endCityFullPinYin":"xinxiang","endCityName":"新乡","endCitySimplePinYin":"xx"},{"endCityFullPinYin":"zhengzhou","endCityName":"郑州","endCitySimplePinYin":"zz"}]

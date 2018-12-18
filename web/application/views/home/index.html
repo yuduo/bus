@@ -1,0 +1,621 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>特价汽车票_12307全国汽车票</title>
+    <link href="http://cdn.12307.net/2015/image/favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站,特价汽车票" />
+    <meta name="description" content="12307线路时刻表频道页提供汽车票价格查询问题,提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！"/>
+    <link rel="stylesheet" href="http://cdn.12307.net/website/css/base.css" />
+     <link rel="stylesheet" href="http://cdn.12307.net/website/css/mright.css" />
+    <link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/ictiy.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/icity_list.css" type="text/css">
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/zepto.alert.css" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="http://cdn.12307.net/wxclient/v3.0/css/min-icityindex.css">
+<script type="text/javascript" src="http://cdn.12307.net/wxclient/v3.0/js/require.min.js" data-main="http://cdn.12307.net/wxclient/v3.0/js/citybus/common/citybusIndex-main"></script>
+
+</head>
+<body>
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+	<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+	<input type="hidden" id="startCityName" value="<?php echo $startCityName;?>" />
+	<input type="hidden" id="endCityName" value="<?php echo $endCityName;?>" />
+<div class="bodyhead">
+ <div class="main-wrap">
+  <h1 class="logo"><a title="12307全国汽车票网" href="http://www.12307.net">12307全国汽车票网</a></h1>
+  </div>
+<!--导航菜单-->
+ <div class="bodymenu">
+    <div class="mainnav">
+        <ul class="navmenu">
+        <li class="nav_0"><a class="" href="index.php" title="首页"  class="cur">首页</a></li>
+        <li class="nav_1"><a href="index.php" title="汽车票">汽车票</a></li>
+        <li class="nav_2"><a href="javascript:window.location.href='index.php?p=home&c=my&a=chat'"  title="在线咨询">在线咨询</a></li>
+        <li class="nav_3"><a href="aboutus.html" title="关于12307">关于12307</a></li>
+        
+        
+        </ul>
+    </div>
+	        
+  </div>
+</div>
+<div class="h15"></div>
+   <div class="main-wrap">
+   <!--时刻表搜索--><!--中间部份-->
+   <div class="main_l_b">
+	<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+	<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+	<input type="hidden" id="startCitysJson" value='[{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"sanya","startCityName":"三亚","startCitySimplePinYin":"sy"},{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"dongfang","startCityName":"东方","startCitySimplePinYin":"df"},{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"danzhou","startCityName":"儋州","startCitySimplePinYin":"dz"},{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"tunchang","startCityName":"屯昌","startCitySimplePinYin":"tc"},{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"wenchang","startCityName":"文昌","startCitySimplePinYin":"wc"},{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"haikou","startCityName":"海口","startCitySimplePinYin":"hk"},{"province":"海南省","provinceFullPinYin":"hainansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"qiongzhong","startCityName":"琼中","startCitySimplePinYin":"qz"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"sanmenxia","startCityName":"三门峡","startCitySimplePinYin":"smx"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"xinyang","startCityName":"信阳","startCitySimplePinYin":"xy"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"nanyang","startCityName":"南阳","startCitySimplePinYin":"ny"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"anyang","startCityName":"安阳","startCitySimplePinYin":"ay"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"gongyi","startCityName":"巩义","startCitySimplePinYin":"gy"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"kaifeng","startCityName":"开封","startCitySimplePinYin":"kf"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"xinxiang","startCityName":"新乡","startCitySimplePinYin":"xx"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"luoyang","startCityName":"洛阳","startCitySimplePinYin":"ly"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"puyang","startCityName":"濮阳","startCitySimplePinYin":"py"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"lingbao","startCityName":"灵宝","startCitySimplePinYin":"lb"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"dengzhou","startCityName":"邓州","startCitySimplePinYin":"dz"},{"province":"河南省","provinceFullPinYin":"henansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"zhengzhou","startCityName":"郑州","startCitySimplePinYin":"zz"},{"province":"上海","provinceFullPinYin":"shanghai","provinceSimplePinYin":"sh","startCityFullPinYin":"shanghai","startCityName":"上海","startCitySimplePinYin":"sh"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"dongguan","startCityName":"东莞","startCitySimplePinYin":"dg"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"zhongshan","startCityName":"中山","startCitySimplePinYin":"zs"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"foshan","startCityName":"佛山","startCitySimplePinYin":"fs"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"wuchuan","startCityName":"吴川","startCitySimplePinYin":"wc"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"guangzhou","startCityName":"广州","startCitySimplePinYin":"gz"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"lianjiang","startCityName":"廉江","startCitySimplePinYin":"lj"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"huizhou","startCityName":"惠州","startCitySimplePinYin":"hz"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"jieyang","startCityName":"揭阳","startCitySimplePinYin":"jy"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"puning","startCityName":"普宁","startCitySimplePinYin":"pn"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"meizhou","startCityName":"梅州","startCitySimplePinYin":"mz"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"shantou","startCityName":"汕头","startCitySimplePinYin":"st"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"shanwei","startCityName":"汕尾","startCitySimplePinYin":"sw"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"jiangmen","startCityName":"江门","startCitySimplePinYin":"jm"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"heyuan","startCityName":"河源","startCitySimplePinYin":"hy"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"shenzhen","startCityName":"深圳","startCitySimplePinYin":"sz"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"qingyuan","startCityName":"清远","startCitySimplePinYin":"qy"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"zhanjiang","startCityName":"湛江","startCitySimplePinYin":"zj"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"zhuhai","startCityName":"珠海","startCitySimplePinYin":"zh"},{"province":"广东省","provinceFullPinYin":"guangdongsheng","provinceSimplePinYin":"gds","startCityFullPinYin":"maoming","startCityName":"茂名","startCitySimplePinYin":"mm"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"linyi","startCityName":"临沂","startCitySimplePinYin":"ly"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"weihai","startCityName":"威海","startCitySimplePinYin":"wh"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"dezhou","startCityName":"德州","startCitySimplePinYin":"dz"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"rizhao","startCityName":"日照","startCitySimplePinYin":"rz"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"zaozhuang","startCityName":"枣庄","startCitySimplePinYin":"zz"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"jinan","startCityName":"济南","startCitySimplePinYin":"jn"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"jining","startCityName":"济宁","startCitySimplePinYin":"jn"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"zibo","startCityName":"淄博","startCitySimplePinYin":"zb"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"weifang","startCityName":"潍坊","startCitySimplePinYin":"wf"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"yantai","startCityName":"烟台","startCitySimplePinYin":"yt"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"liaocheng","startCityName":"聊城","startCitySimplePinYin":"lc"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"jiaonan","startCityName":"胶南","startCitySimplePinYin":"jn"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"jiaozhou","startCityName":"胶州","startCitySimplePinYin":"jz"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"rongcheng","startCityName":"荣成","startCitySimplePinYin":"rc"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"laiyang","startCityName":"莱阳","startCitySimplePinYin":"ly"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"heze","startCityName":"菏泽","startCitySimplePinYin":"hz"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"juanchengxian","startCityName":"鄄城县","startCitySimplePinYin":"jcx"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"qingdao","startCityName":"青岛","startCitySimplePinYin":"qd"},{"province":"山东省","provinceFullPinYin":"shandongsheng","provinceSimplePinYin":"sds","startCityFullPinYin":"huangdao","startCityName":"黄岛","startCitySimplePinYin":"hd"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"danyang","startCityName":"丹阳","startCitySimplePinYin":"dy"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"nanjing","startCityName":"南京","startCitySimplePinYin":"nj"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"nantong","startCityName":"南通","startCitySimplePinYin":"nt"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"wujiang","startCityName":"吴江","startCitySimplePinYin":"wj"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"suqian","startCityName":"宿迁","startCitySimplePinYin":"sq"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"changzhou","startCityName":"常州","startCitySimplePinYin":"cz"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"changshu","startCityName":"常熟","startCitySimplePinYin":"cs"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"zhangjiagang","startCityName":"张家港","startCitySimplePinYin":"zjg"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"xuzhou","startCityName":"徐州","startCitySimplePinYin":"xz"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"yangzhou","startCityName":"扬州","startCitySimplePinYin":"yz"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"wuxi","startCityName":"无锡","startCitySimplePinYin":"wx"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"kunshan","startCityName":"昆山","startCitySimplePinYin":"ks"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"jiangsusheng","startCityName":"江苏省","startCitySimplePinYin":"jss"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"jiangyin","startCityName":"江阴","startCitySimplePinYin":"jy"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"taizhou","startCityName":"泰州","startCitySimplePinYin":"tz"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"huaian","startCityName":"淮安","startCitySimplePinYin":"ha"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"yancheng","startCityName":"盐城","startCitySimplePinYin":"yc"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"suzhou","startCityName":"苏州","startCitySimplePinYin":"sz"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"lianyungang","startCityName":"连云港","startCitySimplePinYin":"lyg"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"zhenjiang","startCityName":"镇江","startCitySimplePinYin":"zj"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"jingjiang","startCityName":"靖江","startCitySimplePinYin":"jj"},{"province":"江苏省","provinceFullPinYin":"jiangsusheng","provinceSimplePinYin":"jss","startCityFullPinYin":"gaoyou","startCityName":"高邮","startCitySimplePinYin":"gy"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"yiwu","startCityName":"义乌","startCitySimplePinYin":"yw"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"leqing","startCityName":"乐清","startCitySimplePinYin":"lq"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"taizhou","startCityName":"台州","startCitySimplePinYin":"tz"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"jiaxing","startCityName":"嘉兴","startCitySimplePinYin":"jx"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"ningbo","startCityName":"宁波","startCitySimplePinYin":"nb"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"cixi","startCityName":"慈溪","startCitySimplePinYin":"cx"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"hangzhou","startCityName":"杭州","startCitySimplePinYin":"hz"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"hangzhoushi","startCityName":"杭州市","startCitySimplePinYin":"hzs"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"zhejiangsheng","startCityName":"浙江省","startCitySimplePinYin":"zjs"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"wenling","startCityName":"温岭","startCitySimplePinYin":"wl"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"wenzhou","startCityName":"温州","startCitySimplePinYin":"wz"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"huzhou","startCityName":"湖州","startCitySimplePinYin":"hz"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"ruian","startCityName":"瑞安","startCitySimplePinYin":"ra"},{"province":"浙江省","provinceFullPinYin":"zhejiangsheng","provinceSimplePinYin":"zjs","startCityFullPinYin":"shaoxing","startCityName":"绍兴","startCitySimplePinYin":"sx"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"wudan","startCityName":"乌丹","startCitySimplePinYin":"wd"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"wuhai","startCityName":"乌海","startCitySimplePinYin":"wh"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"baotou","startCityName":"包头","startCitySimplePinYin":"bt"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"huhehaote","startCityName":"呼和浩特","startCitySimplePinYin":"hhht"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"xiwuqi","startCityName":"西乌旗","startCitySimplePinYin":"xwq"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"chifeng","startCityName":"赤峰","startCitySimplePinYin":"cf"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"tongliao","startCityName":"通辽","startCitySimplePinYin":"tl"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"eerduosi","startCityName":"鄂尔多斯","startCitySimplePinYin":"eeds"},{"province":"内蒙古","provinceFullPinYin":"neimenggu","provinceSimplePinYin":"nmg","startCityFullPinYin":"xilinhaote","startCityName":"锡林浩特","startCitySimplePinYin":"xlht"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"jiujiang","startCityName":"九江","startCitySimplePinYin":"jj"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"yuduxian","startCityName":"于都县","startCitySimplePinYin":"ydx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"xinfengxian","startCityName":"信丰县","startCitySimplePinYin":"xfx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"xiushuixian","startCityName":"修水县","startCitySimplePinYin":"xsx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"nanchang","startCityName":"南昌","startCitySimplePinYin":"nc"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"anyuanxian","startCityName":"安远县","startCitySimplePinYin":"ayx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"yifengxian","startCityName":"宜丰县","startCitySimplePinYin":"yfx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"guangchang","startCityName":"广昌","startCitySimplePinYin":"gc"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"fuzhou","startCityName":"抚州","startCitySimplePinYin":"fz"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"wuningxian","startCityName":"武宁县","startCitySimplePinYin":"wnx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"yongxinxian","startCityName":"永新县","startCitySimplePinYin":"yxx"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"ganzhou","startCityName":"赣州","startCitySimplePinYin":"gz"},{"province":"江西省","provinceFullPinYin":"jiangxisheng","provinceSimplePinYin":"jxs","startCityFullPinYin":"tongguxian","startCityName":"铜鼓县","startCitySimplePinYin":"tgx"},{"province":"湖北省","provinceFullPinYin":"hubeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"xiantao","startCityName":"仙桃","startCitySimplePinYin":"xt"},{"province":"湖北省","provinceFullPinYin":"hubeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"wuhan","startCityName":"武汉","startCitySimplePinYin":"wh"},{"province":"河北省","provinceFullPinYin":"hebeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"baoding","startCityName":"保定","startCitySimplePinYin":"bd"},{"province":"河北省","provinceFullPinYin":"hebeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"tangshan","startCityName":"唐山","startCitySimplePinYin":"ts"},{"province":"河北省","provinceFullPinYin":"hebeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"langfang","startCityName":"廊坊","startCitySimplePinYin":"lf"},{"province":"河北省","provinceFullPinYin":"hebeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"shijiazhuang","startCityName":"石家庄","startCitySimplePinYin":"sjz"},{"province":"河北省","provinceFullPinYin":"hebeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"qinhuangdao","startCityName":"秦皇岛","startCitySimplePinYin":"qhd"},{"province":"河北省","provinceFullPinYin":"hebeisheng","provinceSimplePinYin":"hbs","startCityFullPinYin":"handan","startCityName":"邯郸","startCitySimplePinYin":"hd"},{"province":"贵州省","provinceFullPinYin":"guizhousheng","provinceSimplePinYin":"gzs","startCityFullPinYin":"xingyi","startCityName":"兴义","startCitySimplePinYin":"xy"},{"province":"贵州省","provinceFullPinYin":"guizhousheng","provinceSimplePinYin":"gzs","startCityFullPinYin":"guiyang","startCityName":"贵阳","startCitySimplePinYin":"gy"},{"province":"贵州省","provinceFullPinYin":"guizhousheng","provinceSimplePinYin":"gzs","startCityFullPinYin":"zunyi","startCityName":"遵义","startCitySimplePinYin":"zy"},{"province":"贵州省","provinceFullPinYin":"guizhousheng","provinceSimplePinYin":"gzs","startCityFullPinYin":"qianxinanzhou","startCityName":"黔西南州","startCitySimplePinYin":"qxnz"},{"province":"贵州省","provinceFullPinYin":"guizhousheng","provinceSimplePinYin":"gzs","startCityFullPinYin":"qianxinanbuyizumiaozuzizhizhou","startCityName":"黔西南布依族苗族自治州","startCitySimplePinYin":"qxnbyzmzzzz"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"xingcheng","startCityName":"兴城","startCitySimplePinYin":"xc"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"dalian","startCityName":"大连","startCitySimplePinYin":"dl"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"shenyang","startCityName":"沈阳","startCitySimplePinYin":"sy"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"wafangdian","startCityName":"瓦房店","startCitySimplePinYin":"wfd"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"panjin","startCityName":"盘锦","startCitySimplePinYin":"pj"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"huludao","startCityName":"葫芦岛","startCitySimplePinYin":"hld"},{"province":"辽宁省","provinceFullPinYin":"liaoningsheng","provinceSimplePinYin":"lns","startCityFullPinYin":"anshan","startCityName":"鞍山","startCitySimplePinYin":"as"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"neijiang","startCityName":"内江","startCitySimplePinYin":"nj"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"nanchong","startCityName":"南充","startCitySimplePinYin":"nc"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"sichuansheng","startCityName":"四川省","startCitySimplePinYin":"scs"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"emeishan","startCityName":"峨眉山","startCitySimplePinYin":"ems"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"guangyuan","startCityName":"广元","startCitySimplePinYin":"gy"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"chengdu","startCityName":"成都","startCitySimplePinYin":"cd"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"luzhou","startCityName":"泸州","startCitySimplePinYin":"lz"},{"province":"四川省","provinceFullPinYin":"sichuansheng","provinceSimplePinYin":"scs","startCityFullPinYin":"cangxixian","startCityName":"苍溪县","startCitySimplePinYin":"cxx"},{"province":"湖南省","provinceFullPinYin":"hunansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"fenghuangxian","startCityName":"凤凰县","startCitySimplePinYin":"fhx"},{"province":"湖南省","provinceFullPinYin":"hunansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"changde","startCityName":"常德","startCitySimplePinYin":"cd"},{"province":"湖南省","provinceFullPinYin":"hunansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"jinshi","startCityName":"津市","startCitySimplePinYin":"js"},{"province":"湖南省","provinceFullPinYin":"hunansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"shaoyang","startCityName":"邵阳","startCitySimplePinYin":"sy"},{"province":"湖南省","provinceFullPinYin":"hunansheng","provinceSimplePinYin":"hns","startCityFullPinYin":"changsha","startCityName":"长沙","startCitySimplePinYin":"cs"},{"province":"北京市","provinceFullPinYin":"beijingshi","provinceSimplePinYin":"bjs","startCityFullPinYin":"beijing","startCityName":"北京","startCitySimplePinYin":"bj"},{"province":"广西","provinceFullPinYin":"guangxi","provinceSimplePinYin":"gx","startCityFullPinYin":"beihai","startCityName":"北海","startCitySimplePinYin":"bh"},{"province":"广西","provinceFullPinYin":"guangxi","provinceSimplePinYin":"gx","startCityFullPinYin":"nanning","startCityName":"南宁","startCitySimplePinYin":"nn"},{"province":"广西省","provinceFullPinYin":"guangxisheng","provinceSimplePinYin":"gxs","startCityFullPinYin":"nanning","startCityName":"南宁","startCitySimplePinYin":"nn"},{"province":"广西省","provinceFullPinYin":"guangxisheng","provinceSimplePinYin":"gxs","startCityFullPinYin":"guilin","startCityName":"桂林","startCitySimplePinYin":"gl"},{"province":"广西壮族自治区","provinceFullPinYin":"guangxizhuangzuzizhiqu","provinceSimplePinYin":"gxzzzzq","startCityFullPinYin":"nanning","startCityName":"南宁","startCitySimplePinYin":"nn"},{"province":"广西壮族自治区","provinceFullPinYin":"guangxizhuangzuzizhiqu","provinceSimplePinYin":"gxzzzzq","startCityFullPinYin":"liuzhou","startCityName":"柳州","startCitySimplePinYin":"lz"},{"province":"广西壮族自治区","provinceFullPinYin":"guangxizhuangzuzizhiqu","provinceSimplePinYin":"gxzzzzq","startCityFullPinYin":"guilin","startCityName":"桂林","startCitySimplePinYin":"gl"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"nanping","startCityName":"南平","startCitySimplePinYin":"np"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"xiamen","startCityName":"厦门","startCitySimplePinYin":"xm"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"jianou","startCityName":"建瓯","startCitySimplePinYin":"jo"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"jinjiang","startCityName":"晋江","startCitySimplePinYin":"jj"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"wuyishan","startCityName":"武夷山","startCitySimplePinYin":"wys"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"quanzhou","startCityName":"泉州","startCitySimplePinYin":"qz"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"zhangzhou","startCityName":"漳州","startCitySimplePinYin":"zz"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"shishi","startCityName":"石狮","startCitySimplePinYin":"ss"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"fuan","startCityName":"福安","startCitySimplePinYin":"fa"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"fuzhou","startCityName":"福州","startCitySimplePinYin":"fz"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"fuqing","startCityName":"福清","startCitySimplePinYin":"fq"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"fuding","startCityName":"福鼎","startCitySimplePinYin":"fd"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"putian","startCityName":"莆田","startCitySimplePinYin":"pt"},{"province":"福建省","provinceFullPinYin":"fujiansheng","provinceSimplePinYin":"fjs","startCityFullPinYin":"xiapu","startCityName":"霞浦","startCitySimplePinYin":"xp"},{"province":"安徽省","provinceFullPinYin":"anhuisheng","provinceSimplePinYin":"ahs","startCityFullPinYin":"hefei","startCityName":"合肥","startCitySimplePinYin":"hf"},{"province":"安徽省","provinceFullPinYin":"anhuisheng","provinceSimplePinYin":"ahs","startCityFullPinYin":"anqing","startCityName":"安庆","startCitySimplePinYin":"aq"},{"province":"安徽省","provinceFullPinYin":"anhuisheng","provinceSimplePinYin":"ahs","startCityFullPinYin":"maanshan","startCityName":"马鞍山","startCitySimplePinYin":"mas"},{"province":"安徽省","provinceFullPinYin":"anhuisheng","provinceSimplePinYin":"ahs","startCityFullPinYin":"huangshan","startCityName":"黄山","startCitySimplePinYin":"hs"},{"province":"吉林省","provinceFullPinYin":"jilinsheng","provinceSimplePinYin":"jls","startCityFullPinYin":"jilin","startCityName":"吉林","startCitySimplePinYin":"jl"},{"province":"吉林省","provinceFullPinYin":"jilinsheng","provinceSimplePinYin":"jls","startCityFullPinYin":"yanji","startCityName":"延吉","startCitySimplePinYin":"yj"},{"province":"吉林省","provinceFullPinYin":"jilinsheng","provinceSimplePinYin":"jls","startCityFullPinYin":"songyuan","startCityName":"松原","startCitySimplePinYin":"sy"},{"province":"吉林省","provinceFullPinYin":"jilinsheng","provinceSimplePinYin":"jls","startCityFullPinYin":"yushu","startCityName":"榆树","startCitySimplePinYin":"ys"},{"province":"吉林省","provinceFullPinYin":"jilinsheng","provinceSimplePinYin":"jls","startCityFullPinYin":"changchun","startCityName":"长春","startCitySimplePinYin":"cc"},{"province":"黑龙江省","provinceFullPinYin":"heilongjiangsheng","provinceSimplePinYin":"hljs","startCityFullPinYin":"haerbin","startCityName":"哈尔滨","startCitySimplePinYin":"heb"},{"province":"黑龙江省","provinceFullPinYin":"heilongjiangsheng","provinceSimplePinYin":"hljs","startCityFullPinYin":"daqing","startCityName":"大庆","startCitySimplePinYin":"dq"},{"province":"黑龙江省","provinceFullPinYin":"heilongjiangsheng","provinceSimplePinYin":"hljs","startCityFullPinYin":"zhaodong","startCityName":"肇东","startCitySimplePinYin":"zd"},{"province":"黑龙江","provinceFullPinYin":"heilongjiang","provinceSimplePinYin":"hlj","startCityFullPinYin":"haerbin","startCityName":"哈尔滨","startCitySimplePinYin":"heb"},{"province":"云南省","provinceFullPinYin":"yunnansheng","provinceSimplePinYin":"yns","startCityFullPinYin":"dali","startCityName":"大理","startCitySimplePinYin":"dl"},{"province":"云南省","provinceFullPinYin":"yunnansheng","provinceSimplePinYin":"yns","startCityFullPinYin":"wenshan","startCityName":"文山","startCitySimplePinYin":"ws"},{"province":"云南省","provinceFullPinYin":"yunnansheng","provinceSimplePinYin":"yns","startCityFullPinYin":"kunming","startCityName":"昆明","startCitySimplePinYin":"km"},{"province":"云南省","provinceFullPinYin":"yunnansheng","provinceSimplePinYin":"yns","startCityFullPinYin":"zhaotong","startCityName":"昭通","startCitySimplePinYin":"zt"},{"province":"云南省","provinceFullPinYin":"yunnansheng","provinceSimplePinYin":"yns","startCityFullPinYin":"honghe","startCityName":"红河","startCitySimplePinYin":"hh"},{"province":"云南省","provinceFullPinYin":"yunnansheng","provinceSimplePinYin":"yns","startCityFullPinYin":"mengzi","startCityName":"蒙自","startCitySimplePinYin":"mz"},{"province":"天津市","provinceFullPinYin":"tianjinshi","provinceSimplePinYin":"tjs","startCityFullPinYin":"tianjin","startCityName":"天津","startCitySimplePinYin":"tj"},{"province":"山西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"taiyuan","startCityName":"太原","startCitySimplePinYin":"ty"},{"province":"山西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"jincheng","startCityName":"晋城","startCitySimplePinYin":"jc"},{"province":"山西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"zezhouxian","startCityName":"泽州县","startCitySimplePinYin":"zzx"},{"province":"山西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"changzhi","startCityName":"长治","startCitySimplePinYin":"cz"},{"province":"山西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"lingchuanxian","startCityName":"陵川县","startCitySimplePinYin":"lcx"},{"province":"陕西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"xian","startCityName":"西安","startCitySimplePinYin":"xa"},{"province":"陕西省","provinceFullPinYin":"shanxisheng","provinceSimplePinYin":"sxs","startCityFullPinYin":"hancheng","startCityName":"韩城","startCitySimplePinYin":"hc"},{"province":"遂溪县城，廉江","provinceFullPinYin":"suixixiancheng，lianjiang","provinceSimplePinYin":"sxxc，lj","startCityFullPinYin":"suixixiancheng，lianjiang","startCityName":"遂溪县城，廉江","startCitySimplePinYin":"sxxc，lj"},{"province":"重庆市","provinceFullPinYin":"chongqingshi","provinceSimplePinYin":"cqs","startCityFullPinYin":"chongqing","startCityName":"重庆","startCitySimplePinYin":"cq"}]'>
+	<!--使网页的内容无法被鼠标或键盘选定-->
+	<div id="main">
+		<!--mainBox--->
+	  <div id="mainBox">
+		<div id="headerBox" class="headerBox">
+				<article class="header">
+					<header>
+						<a class="header_left" href="javascript:window.location.href='index.php?_random='+Math.random();"></a>
+						<h1>城际专线</h1>
+					</header>
+				</article>
+			</div>
+			<article class="selBox">
+			  <div class="selBox_C">
+					<div class="selBox_city">
+						<div class="fl-l">
+							<i class="i_startC"></i>
+						</div>
+						<a href="javascript:void(0);"><div class="selBox_item_v">
+								<div id="startCityInput" class="selBox_extend">
+									<span class="city_txt">输入您出发的城市</span>
+								</div>
+							</div></a>
+					</div>
+
+					<div class="selBox_city">
+						<div class="fl-l">
+							<i class="i_endC"></i>
+						</div>
+						<a href="javascript:void(0);"><div class="selBox_item_v">
+								<div id="endCityInput" class="selBox_extend">
+									<span class="city_txt">输入您要去的城市</span>
+								</div>
+							</div></a>
+					</div>
+
+					<a class="switch" href="javascript:void(0);"></a>
+					<!--点击 switchon-->
+
+					<div id="ftStartDate" class="selBox_date">
+						<div class="fl-l">
+							<i class="i_timeC"></i>
+						</div>
+						<div class="selBox_item_v">
+							<div id="startDateInput" class="selBox_extend">
+								<input id="dateline" class="city_input city_date" type="text" readonly />
+								<span class="city_week"></span>
+							</div>
+                            <script language="JavaScript"> 
+				today=new Date(); 
+				var y=(new Date()).getMonth()+1;
+				var d=today.getDate();
+				dateline.value=today.getFullYear()+'-'+((y<10?'0':'')+y)+'-'+((d<10?'0':'')+d); 
+				
+				</script> 
+						</div>
+					</div>
+				</div>
+				<a href="javascript:void(0);"><button class="ibtnRed" id="searchBtn" type="button">查询</button></a>
+			</article>
+		</div>
+	</div>
+		<!--/mainBox--->
+<!--热门线路--->
+<ul class="hot_line">
+    <h1>&nbsp;</h1>
+</ul>
+<script type="text/javascript">
+	function _redirect_search(startCityName,endCityName,date){
+		var urlAddr = '/citybus/busLine.html?startCityName=' + encodeURIComponent(encodeURIComponent(startCityName))
+				+ "&endCityName=" + encodeURIComponent(encodeURIComponent(endCityName))
+				+ "&date=" + date +"&_random=" + Math.random();
+		window.location.href = urlAddr;
+	}
+</script>
+		<!--底部--->
+    <!--底部--->
+    
+		<!--搜索起始城市--->
+		<!--搜索城市.汽车票（查看预售期）--->
+		<div class="pagec current" id="startCitiesPage" style="display: none; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);"> 
+	   	  <div class="topFixedc"> 
+			    <div class="searchbarc"> 
+			     <div class="searchbar-inner" id="destcityInput2"> 
+			      <i class="icon-search"></i> 
+			      <input type="text" id="startCitySearch" placeholder="请输入城市名称，如(北京、bj、beijing)" value=""> 
+			      <i class="icon-clear display-none"></i> 
+			     </div> 
+			     <span class="btn-search" id="btn-search">取消</span>
+			    </div> 
+		   	</div>
+	   	  <div class="cityListc" id="startCityList" style="display:none">
+		    	<dl></dl>
+		   	</div>
+	   	  <div class="middleFixedc">
+		    	<div class="location_box">
+		    		<span class="c66">我在</span><i class="i_location"></i>
+		    		<span class="cblue" id="locationCityName"></span>
+		    	</div>
+		    	<div class="hotcity_box">
+		    		<div class="hotcity_tit">热门城市</div> 
+		    		<span>广州</span>
+		    		<span>上海</span>
+		    		<span>北京</span>
+		    		<span>深圳</span>
+		    	</div>
+		   	</div>
+			<!--搜索--->
+		  <nav id="c_tab_box" class="c_tab_box">
+				<div class="c_l_left" id="c_l_left">
+						<h3 class="up" index="0"><span>海南省</span></h3>
+						<h3 class="" index="1"><span>河南省</span></h3>
+						<h3 class="" index="2"><span>上海</span></h3>
+						<h3 class="" index="3"><span>广东省</span></h3>
+						<h3 class="" index="4"><span>山东省</span></h3>
+						<h3 class="" index="5"><span>江苏省</span></h3>
+						<h3 class="" index="6"><span>浙江省</span></h3>
+						<h3 class="" index="7"><span>内蒙古</span></h3>
+						<h3 class="" index="8"><span>江西省</span></h3>
+						<h3 class="" index="9"><span>湖北省</span></h3>
+						<h3 class="" index="10"><span>河北省</span></h3>
+						<h3 class="" index="11"><span>贵州省</span></h3>
+						<h3 class="" index="12"><span>辽宁省</span></h3>
+						<h3 class="" index="13"><span>四川省</span></h3>
+						<h3 class="" index="14"><span>湖南省</span></h3>
+						<h3 class="" index="15"><span>北京市</span></h3>
+						<h3 class="" index="16"><span>广西</span></h3>
+						<h3 class="" index="17"><span>广西省</span></h3>
+						<h3 class="" index="18"><span>广西壮族自治区</span></h3>
+						<h3 class="" index="19"><span>福建省</span></h3>
+						<h3 class="" index="20"><span>安徽省</span></h3>
+						<h3 class="" index="21"><span>吉林省</span></h3>
+						<h3 class="" index="22"><span>黑龙江省</span></h3>
+						<h3 class="" index="23"><span>黑龙江</span></h3>
+						<h3 class="" index="24"><span>云南省</span></h3>
+						<h3 class="" index="25"><span>天津市</span></h3>
+						<h3 class="" index="26"><span>山西省</span></h3>
+						<h3 class="" index="27"><span>陕西省</span></h3>
+						<h3 class="" index="28"><span>遂溪县城，廉江</span></h3>
+						<h3 class="" index="29"><span>重庆市</span></h3>
+				</div>
+				<div class="c-tab-r up">
+			        <ul class="list">
+				        <li>三亚</li>
+				        <li>东方</li>
+				        <li>儋州</li>
+				        <li>屯昌</li>
+				        <li>文昌</li>
+				        <li>海口</li>
+				        <li>琼中</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>三门峡</li>
+				        <li>信阳</li>
+				        <li>南阳</li>
+				        <li>安阳</li>
+				        <li>巩义</li>
+				        <li>开封</li>
+				        <li>新乡</li>
+				        <li>洛阳</li>
+				        <li>濮阳</li>
+				        <li>灵宝</li>
+				        <li>邓州</li>
+				        <li>郑州</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>上海</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>东莞</li>
+				        <li>中山</li>
+				        <li>佛山</li>
+				        <li>吴川</li>
+				        <li>广州</li>
+				        <li>廉江</li>
+				        <li>惠州</li>
+				        <li>揭阳</li>
+				        <li>普宁</li>
+				        <li>梅州</li>
+				        <li>汕头</li>
+				        <li>汕尾</li>
+				        <li>江门</li>
+				        <li>河源</li>
+				        <li>深圳</li>
+				        <li>清远</li>
+				        <li>湛江</li>
+				        <li>珠海</li>
+				        <li>茂名</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>临沂</li>
+				        <li>威海</li>
+				        <li>德州</li>
+				        <li>日照</li>
+				        <li>枣庄</li>
+				        <li>济南</li>
+				        <li>济宁</li>
+				        <li>淄博</li>
+				        <li>潍坊</li>
+				        <li>烟台</li>
+				        <li>聊城</li>
+				        <li>胶南</li>
+				        <li>胶州</li>
+				        <li>荣成</li>
+				        <li>莱阳</li>
+				        <li>菏泽</li>
+				        <li>鄄城县</li>
+				        <li>青岛</li>
+				        <li>黄岛</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>丹阳</li>
+				        <li>南京</li>
+				        <li>南通</li>
+				        <li>吴江</li>
+				        <li>宿迁</li>
+				        <li>常州</li>
+				        <li>常熟</li>
+				        <li>张家港</li>
+				        <li>徐州</li>
+				        <li>扬州</li>
+				        <li>无锡</li>
+				        <li>昆山</li>
+				        <li>江苏省</li>
+				        <li>江阴</li>
+				        <li>泰州</li>
+				        <li>淮安</li>
+				        <li>盐城</li>
+				        <li>苏州</li>
+				        <li>连云港</li>
+				        <li>镇江</li>
+				        <li>靖江</li>
+				        <li>高邮</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>义乌</li>
+				        <li>乐清</li>
+				        <li>台州</li>
+				        <li>嘉兴</li>
+				        <li>宁波</li>
+				        <li>慈溪</li>
+				        <li>杭州</li>
+				        <li>杭州市</li>
+				        <li>浙江省</li>
+				        <li>温岭</li>
+				        <li>温州</li>
+				        <li>湖州</li>
+				        <li>瑞安</li>
+				        <li>绍兴</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>乌丹</li>
+				        <li>乌海</li>
+				        <li>包头</li>
+				        <li>呼和浩特</li>
+				        <li>西乌旗</li>
+				        <li>赤峰</li>
+				        <li>通辽</li>
+				        <li>鄂尔多斯</li>
+				        <li>锡林浩特</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>九江</li>
+				        <li>于都县</li>
+				        <li>信丰县</li>
+				        <li>修水县</li>
+				        <li>南昌</li>
+				        <li>安远县</li>
+				        <li>宜丰县</li>
+				        <li>广昌</li>
+				        <li>抚州</li>
+				        <li>武宁县</li>
+				        <li>永新县</li>
+				        <li>赣州</li>
+				        <li>铜鼓县</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>仙桃</li>
+				        <li>武汉</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>保定</li>
+				        <li>唐山</li>
+				        <li>廊坊</li>
+				        <li>石家庄</li>
+				        <li>秦皇岛</li>
+				        <li>邯郸</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>兴义</li>
+				        <li>贵阳</li>
+				        <li>遵义</li>
+				        <li>黔西南州</li>
+				        <li>黔西南布依族苗族自治州</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>兴城</li>
+				        <li>大连</li>
+				        <li>沈阳</li>
+				        <li>瓦房店</li>
+				        <li>盘锦</li>
+				        <li>葫芦岛</li>
+				        <li>鞍山</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>内江</li>
+				        <li>南充</li>
+				        <li>四川省</li>
+				        <li>峨眉山</li>
+				        <li>广元</li>
+				        <li>成都</li>
+				        <li>泸州</li>
+				        <li>苍溪县</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>凤凰县</li>
+				        <li>常德</li>
+				        <li>津市</li>
+				        <li>邵阳</li>
+				        <li>长沙</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>北京</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>北海</li>
+				        <li>南宁</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>南宁</li>
+				        <li>桂林</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>南宁</li>
+				        <li>柳州</li>
+				        <li>桂林</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>南平</li>
+				        <li>厦门</li>
+				        <li>建瓯</li>
+				        <li>晋江</li>
+				        <li>武夷山</li>
+				        <li>泉州</li>
+				        <li>漳州</li>
+				        <li>石狮</li>
+				        <li>福安</li>
+				        <li>福州</li>
+				        <li>福清</li>
+				        <li>福鼎</li>
+				        <li>莆田</li>
+				        <li>霞浦</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>合肥</li>
+				        <li>安庆</li>
+				        <li>马鞍山</li>
+				        <li>黄山</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>吉林</li>
+				        <li>延吉</li>
+				        <li>松原</li>
+				        <li>榆树</li>
+				        <li>长春</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>哈尔滨</li>
+				        <li>大庆</li>
+				        <li>肇东</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>哈尔滨</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>大理</li>
+				        <li>文山</li>
+				        <li>昆明</li>
+				        <li>昭通</li>
+				        <li>红河</li>
+				        <li>蒙自</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>天津</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>太原</li>
+				        <li>晋城</li>
+				        <li>泽州县</li>
+				        <li>长治</li>
+				        <li>陵川县</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>西安</li>
+				        <li>韩城</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>遂溪县城，廉江</li>
+			        </ul>
+			    </div> 	
+				<div class="c-tab-r">
+			        <ul class="list">
+				        <li>重庆</li>
+			        </ul>
+			    </div> 	
+				<div class="c_l_right"></div>
+			</nav>
+			<!--/搜索--->
+		</div>
+		<!--/搜索目的地城市--->
+		<div class="page current" id="endCitiesPage">
+			<div class="topFixed">
+ 				<!-- <span class="letFixed">B</span> -->
+				<div class="searchbar">
+				  <div class="searchbar-inner">
+						<i class="icon-search"></i> <input type="text" id="endCitySearch" placeholder="请输入城市名称，如(北京、bj、beijing)" value="" /> 
+						<i class="icon-clear display-none"></i>
+					</div>
+				  <span class="btn-search" id="endCityClose">取消</span>
+				</div>
+			</div>
+		  <div class="cityList">
+				<dl data-type="0">
+					
+				</dl>
+			</div>
+		</div>
+	</div>
+		
+   <div class="main_r_b">
+<div class="main_right">
+  <div class="main_r_b">
+   <div class="asktop_b">
+   <a  title="有疑问需要咨询，点击提问" href="javascript:window.location.href='index.php?p=home&amp;c=my&amp;a=chat'"><img src="http://cdn.12307.net/website/image/a.jpg" width="235" height="27" alt="有疑问需要咨询，点击提问"/></a>
+      </div>
+       <div class="h15"></div>       
+       <div class="comprob_b dashedl">
+            <h4>常见问题</h4>
+           <ul class="ul_comprob c333">
+           <li><a  title="网上支付是否安全？" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=1'">网上支付是否安全？</a></li>
+           <li><a  title="预订并提交订单后必须要立即支付吗？" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=2'">预订并提交订单后必须要立即支付吗？</a></li>
+           <li><a  title="为什么订单支付完成后页面还是显示正在付款？" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=3'">为什么订单支付完成后页面还是显示正在付款？</a></li>
+           
+           <li><a  title="购票成功后没有收到短信怎么办？" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=4'">购票成功后没有收到短信怎么办？</a></li>
+           <li><a  title="一般可以提前几天购票?" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=5'">一般可以提前几天购票？</a></li>
+   		  </ul>
+       </div>     
+       <div class="newbie_b bgline">
+            <h4>新手上路</h4>
+            <div class="newbie_img"></div>
+          <dl class="ul_comprob c333">
+            <dt>第 1 课</dt>
+            <dd><a  title="如何成为12307会员" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=6'">如何成为12307会员？</a></dd>
+            <dd><a  title="如何联系我们？" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=7'">如何联系我们？</a></dd>
+			<div class="h12"></div>
+            <dt>第 2 课</dt>
+            <dd><a  title="如何查询预订汽车票" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=8'">如何查询预订汽车票？</a></dd>
+            <dd><a  title="如何购票下订单" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=9'">如何购票下订单？</a></dd>
+            <dd><a  title="如何网上支付" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=10'">如何网上支付？</a></dd>
+           
+            <div class="h10"></div>
+            <dt>第 3 课</dt>
+            
+            <dd><a  title="如何退票，退款？" href="javascript:window.location.href='index.php?p=home&c=my&a=help&type=11'">如何退票，退款？</a></dd>
+         </dl>
+       </div>   
+   </div>
+ </div>    </div>
+</div>
+
+<input type="hidden" id="timesType" value="0"/>
+<input type="hidden" id="stationName" value="0"/>
+
+
+<!--公用Foot和友情链接-->
+<div class="h20"></div>
+ <div class="footer">
+  <div class="footer-hd">
+    <p>
+      <a href="http://www.12306.cn" target="_blank" title="火车票网上订票">火车票网上订票</a>
+      <b>|</b>
+      <a href="http://trip.taobao.com" target="_blank" title="淘宝旅行">淘宝旅行</a>
+      <b>|</b>
+      <a href="http://www.qunar.com" target="_blank" title="去哪儿网">去哪儿网</a>
+      <b>|</b>
+      <a href="http://www.tieyou.com" target="_blank" title="铁友网">铁友网</a>
+    </p>
+  </div>
+  <div class="footer-bd">
+    <p>
+      <a  title="关于12307" href="aboutus.html">关于12307</a>
+      <a  title="联系我们"  href="contactus.html">联系我们</a>
+      <a  title="服务协议"   href="agree.html">服务协议</a>
+      <a  title="诚征英才" href="jobs.html">诚征英才</a>
+      <a  title="常见问题" href="question.html">常见问题</a>
+    </p>
+    <p>
+      <em>&copy; 2014 12307 版权所有</em>
+      <b>|</b>
+      <span><a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备16020560号</a></span>
+    </p>
+  </div>
+</div>
+
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d60748f2e1d27a897fdab1404d6761b6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+</html>

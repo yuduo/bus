@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"zhongshan","endCityName":"中山","endCitySimplePinYin":"zs"},{"endCityFullPinYin":"shenzhen","endCityName":"深圳","endCitySimplePinYin":"sz"}]

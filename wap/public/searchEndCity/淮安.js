@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"shenzhen","endCityName":"深圳","endCitySimplePinYin":"sz"},{"endCityFullPinYin":"qingdao","endCityName":"青岛","endCitySimplePinYin":"qd"},{"endCityFullPinYin":"guangzhou","endCityName":"广州","endCitySimplePinYin":"gz"},{"endCityFullPinYin":"shenyang","endCityName":"沈阳","endCitySimplePinYin":"sy"}]

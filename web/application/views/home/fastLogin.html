@@ -1,0 +1,155 @@
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="copyright" content="Copyright (c) 2014 12308.com ">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<title>12307-全国大巴,汽车拼车,货运拼车_长途汽车线路时刻表_汽车票查询_</title>
+<meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站" />
+<meta name="description" content="12307提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站!" />
+<link href="http://cdn.12307.net/website/css/loginbase.css" type="text/css"
+	rel="stylesheet" />
+
+ 
+<script type="text/javascript">
+    var sleep = 30, interval = null;
+    window.onload = function ()
+    {
+        var btn = document.getElementById ('getValidateCode');
+        btn.onclick = function ()
+        {
+            if (!interval)
+            {
+                this.style.backgroundColor = 'rgb(243, 182, 182)';
+                this.disabled = "disabled";
+                this.style.cursor = "wait";
+                this.value = "重新发送 (" + sleep-- + ")";
+                interval = setInterval (function ()
+                {
+                    if (sleep == 0)
+                    {
+                        if (!!interval)
+                        {
+                            clearInterval (interval);
+                            interval = null;
+                            sleep = 30;
+                            btn.style.cursor = "pointer";
+                            btn.removeAttribute ('disabled');
+                            btn.value = "免费获取验证码";
+                            btn.style.backgroundColor = '';
+                        }
+                        return false;
+                    }
+                    btn.value = "重新发送 (" + sleep-- + ")";
+                }, 1000);
+            }
+        }
+    }
+</script>   
+</head>
+<body>
+<input type="hidden" id="backURL" value="<?php echo $backURL ;?>">
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+
+	<div class="header">
+		<div class="header-container">
+			<div class="logo">
+				<a href="index.php">12307首页</a> <span class="header-title">用户登录</span>
+			</div>
+			<div class="navigation color3">
+				<a href="index.php">首页</a>
+				<span class="c999">|</span> <a href="javascript:window.location.href='index.php?p=home&c=my&a=chat'"> 帮助中心</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="content-container con_p_0">
+			<div class="login-banner">
+				<img src="http://cdn.12307.net/website/image/1.jpg" border="0" data-pinit="registered">
+			</div>
+            <div class="login-body">
+			<div class="login-module">
+            <div class="loginbox">
+				<div class="loginheader">欢迎登录 12307.net</div>
+					<div style="color:red;">手机验证码,快速登陆 </div>
+				<div class="logincontent">
+					
+						
+						<input type="hidden" name="redirect" value="">
+						<ul>
+							<li>
+								<input id="username" name="username" tabindex="1" style="color:#a9a9a9;" value="手机号码" class="l_input txt" type="text" onfocus="if (this.value==&#39;手机号码&#39;) {this.value=&#39;&#39;;this.style.color=&#39;#333&#39;};" onblur="trimvalue(this)" value="" autocomplete="false"/>
+                                <br></br>
+                                <input id="getValidateCode" type="button" value="免费获取验证码" />
+							</li>
+							<script>
+							 function trimvalue(obj){
+								  obj.value  =obj.value.replace(/[ ]/g,"");   
+								  if(obj.value.length<=0){obj.value='手机号码';obj.style.color='#a9a9a9'}
+							}        
+                               
+							</script>
+							<li>
+								<input id="password" name="password" tabindex="2" style="color:#333;" placeholder="输入手机验证码" class="l_input paswd" type="password" value="" autocomplete="off"/>
+							</li>
+							
+							<li>
+								<input type="hidden" name="lt" value="LT-6063900-i97pdf0FQq5UnlEqVm2lReDZk7PQcV" />
+								<input type="hidden" name="execution" value="e1s1" />
+								<input type="hidden" name="_eventId" value="submit" />		
+								<input id = "fastlogin" class="btn-bg" name="submit" accesskey="l" value="登录" tabindex="3" type="submit" />					
+							</li>
+                            </ul>
+					
+					</div>
+				</div>
+			</div>
+			
+            <div class="login-bottom">
+              
+            	<div class="loginbo_box">
+            	<span class="c666">上海堆栈智能科技有限公司</span><span class="right color3"</span>
+					
+            	</div>
+            </div> 
+		</div></div>
+		
+	</div>
+	
+	
+	
+ 
+
+
+		<div class="footer">
+			<div class="footer-container">
+				<div class="copyrights">Copyright © 2015 12307.net，All Rights Reserved沪ICP备16020560号</div>
+			</div>
+		</div>
+	<script src="http://cdn.12307.net/wxclient/v3.0/js/jquery-1.9.1.min.js"></script>
+	<script src="http://cdn.12307.net/wxclient/v3.0/js/loading/loading.js"></script>
+
+    <script src="http://cdn.12307.net/wxclient/v3.0/js/fastLogin.js"></script>
+	
+</body>
+<span style=" visibility: hidden;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d60748f2e1d27a897fdab1404d6761b6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</span>
+</html>

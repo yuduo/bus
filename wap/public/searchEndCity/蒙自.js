@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"beihai","endCityName":"北海","endCitySimplePinYin":"bh"},{"endCityFullPinYin":"nanning","endCityName":"南宁","endCitySimplePinYin":"nn"}]

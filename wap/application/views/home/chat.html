@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"><!--Ajax跨域问题浏览器兼容性-->
+    <link rel="shortcut icon" href="http://cdn.12307.net/wxclient/v3.0/image/favicon.ico" type="http://cdn.12307.net/wxclient/v3.0/image/x-icon" />  
+    <title>订单查询</title>
+    <meta name="keywords" content="12307,汽车票,长途汽车,汽车票预订,汽车票查询,汽车时刻表,全国汽车站" />
+    <meta name="description" content="12307是提供网上汽车票查询,汽车时刻表查询,汽车票预订,全国汽车站查询等服务的便民性门户网站！"/>
+<link rel="stylesheet" href="http://cdn.12307.net/wxclient/v3.0/css/ictiy.css" type="text/css">
+</head>
+<body onselectstart="return false" class="bgray"><!--使网页的内容无法被鼠标或键盘选定-->
+<input type="hidden" id="accToken" value="<?php echo $accToken ;?>">
+<input type="hidden" id="basePath" value="<?php echo $basePath ;?>">
+<input type="hidden" id="jsResourcePath" value="http://cdn.12307.net/wxclient/v3.0">
+<div id="main">
+<div id="headerBox" class="headerBox">
+<!--head--->   
+<article class="header">
+<header>
+	<h1>在线咨询</h1>
+	
+</header>
+<div class="h50"><span>正在加载中...出现咨询按钮后,请点击</span></div>
+<!--底部--->
+    <footer>
+    <div class="h50"></div>
+    <article class="footerBar">
+    <a class="tab_1 " href="javascript:window.location.href='index.php';">车票</a>
+    <a class="tab_2 " href="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=9147846&userId=21032841'">在线咨询<span class="_order_notice_num"></span></a>
+    <a class="tab_3 " href="javascript:window.location.href='index.php?p=home&c=my'">我的</a><a class="tab_4 " href="javascript:window.location.href='index.php?p=home&c=my&a=aboutus'">关于我们</a>
+    </article>
+    	
+    </footer>
+    </article>
+    </div>
+</div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd60748f2e1d27a897fdab1404d6761b6' type='text/javascript'%3E%3C/script%3E"));
+</script>    
+</body>
+</html>

@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"chifeng","endCityName":"赤峰","endCitySimplePinYin":"cf"}]

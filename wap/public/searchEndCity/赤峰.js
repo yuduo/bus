@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"beijing","endCityName":"北京","endCitySimplePinYin":"bj"},{"endCityFullPinYin":"wudan","endCityName":"乌丹","endCitySimplePinYin":"wd"},{"endCityFullPinYin":"huhehaote","endCityName":"呼和浩特","endCitySimplePinYin":"hhht"},{"endCityFullPinYin":"wulanchabu","endCityName":"乌兰察布","endCitySimplePinYin":"wlcb"}]

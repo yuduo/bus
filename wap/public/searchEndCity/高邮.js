@@ -1,0 +1,1 @@
+[{"endCityFullPinYin":"jiaozhou","endCityName":"胶州","endCitySimplePinYin":"jz"},{"endCityFullPinYin":"qingdao","endCityName":"青岛","endCitySimplePinYin":"qd"}]
